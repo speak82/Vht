@@ -79,11 +79,11 @@
 	<h2>Épületekre, épületszerkezeti elemekre vonatkozó előírások</h2>
 	<div class="myline">
 	<div class="szoveg">Környezetvédelmi előírások teljesülnek?( I. és LXII. számú Melléklet)
-	<div class="szoveg_input"><textarea name="input[]" id="input1" style="display:none;"></textarea></div>
+	<div class="szoveg_input"><textarea name="input[]" id="input1" style="display:none;"></textarea><br></div>
 	</div>
 	
 	<div class="kitölt">
-	<form id="ajaxform" action="http://zskf.bestit.hu/app_up.php" method=post enctype="multipart/form-data" data-ajax="true">
+	<form enctype="multipart/form-data">
 <fieldset data-role="controlgroup" data-type="horizontal">
 <input type="radio" name="radio[]" id="radio-choice-h-2a" value="nem" checked="checked">
 <label for="radio-choice-h-2a">Nem</label>
@@ -104,7 +104,10 @@
 	<i class="glyphicon glyphicon-volume-up" onclick="captureAudio();"></i>
 	</div>
 	</div>
+	<br>
+	<button type="button" class="btn btn-default">Mentés</button>
 	</center>
+	
 </form>
 	</div>
 </div>
@@ -121,7 +124,7 @@
 	<center style="color : #b11116;">
 	<i class="glyphicon glyphicon-refresh" id="sync_rotate" style="font-size:170px;"></i><br>
 	<br>
-	szinkronizálás
+	szinkronizálás kész
 	
 	</center>
 	</div>

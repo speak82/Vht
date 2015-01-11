@@ -106,7 +106,7 @@ font-weight: normal;
 	
 	
 .Rowcc:nth-child(even) { background-color:rgba(247,143,30,0.3) !important; }
-.ui-panel { background-image: url(lib/img/bg.png);}
+
 
 .ui-slider-label { background-color:#fbac18 !important;}
 .ui-btn-active {background-color:#db2128 !important;}
