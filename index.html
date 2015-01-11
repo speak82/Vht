@@ -27,7 +27,6 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<link rel="stylesheet" type="text/css" href="lib/vht.css" />
-        
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="lib/jquery.mobile.structure-1.4.3.min.css" />
@@ -100,14 +99,9 @@
 <option >5</option>
 </select>
 </fieldset>
-
 	<i class="glyphicon glyphicon-pencil" data-id="input1"></i>
-	
-	<span class="file-wrapperr">
-		<input type="file" name="photo" id="photo">
-	<span class="button"><i class="glyphicon glyphicon-camera"></i></span>
-	</span>
-	<i class="glyphicon glyphicon-volume-up"></i>
+	<i class="glyphicon glyphicon-camera" onclick="getImage();"></i>
+	<i class="glyphicon glyphicon-volume-up" onclick="captureAudio();"></i>
 	</div>
 	</div>
 	</center>
@@ -165,6 +159,37 @@
 		$("#"+$(this).attr("data-id")).toggle();
 		
 		});
+		
+		function getImage() {
+          navigator.camera.getPicture(function(imageURI){
+
+			window.resolveLocalFileSystemURI(imageUri, function(fileEntry) {
+					fileEntry.file(function(fileObj) {
+	                var fileName = fileObj.fullPath;
+					
+					//ft.upload(fileName ,serverURL + '/ajax.php?fname=appuploadspotimage'...);
+
+            });
+        });
+});
+ 
+        }
+		
+		
+    function captureAudio() {
+       navigator.device.capture.captureAudio(function(mediaFiles){
+ 
+    // mediaFiles will be an array of MediaFile objects
+ 
+    var options = new FileUploadOptions();
+    var ft = new FileTransfer();
+    var fileURI = mediaFiles[0].fullPath;
+
+    });
+	}
+
+		
+		
 		
 </script>
     </body>
