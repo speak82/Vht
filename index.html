@@ -124,6 +124,8 @@
 	<center style="color : #b11116;">
 	<i class="glyphicon glyphicon-refresh" id="sync_rotate" style="font-size:170px;"></i><br>
 	<br>
+	<div id="sync_java">
+	</div>
 	szinkronizálás kész
 	
 	</center>
@@ -143,6 +145,13 @@
 
 		});
 		$( document ).delegate("#sync", "pageshow", function() {
+		
+		$.mobile.loading( 'show');
+			$.get("http://vht.bestit.hu/java.php", function(data){
+				$( "#sync_java" ).html( data );
+				$.mobile.loading( 'hide');
+			});
+		
 		$('#sync_rotate').animate({  borderSpacing: -360 }, {
     step: function(now,fx) {
       $(this).css('-webkit-transform','rotate('+now+'deg)'); 
