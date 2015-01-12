@@ -208,8 +208,10 @@ color:#c2c2c2;
 padding-right:36px;
 }
 #kitolto_content .myline { display:  block; overflow:auto; }
-#kitolto_content .szoveg { float:left; width:900px; /*background-color:#aa0000;*/}
+/*
+#kitolto_content .szoveg { float:left; width:900px; }
 #kitolto_content .kitölt { float:right; width:240px;}
+*/
 .my_clear {
 clear: both;
 }
