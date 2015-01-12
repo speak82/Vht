@@ -209,8 +209,10 @@ color:#b11116;
 /*padding-right:36px;*/
 }
 #kitolto_content .myline { display:  block; overflow:auto; }
+/*
 #kitolto_content .szoveg { float:left; width:900px; }
 #kitolto_content .kitolt { float:right; width:240px;}
+*/
 .my_clear {
 clear: both;
 }
