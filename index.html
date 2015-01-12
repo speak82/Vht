@@ -145,9 +145,9 @@
 			
 		});
 		
-		$( document ).delegate("#main", "pageinit", function() {
+		$( document ).delegate("#main", "pageshow", function() {
 		
-		$("#kitolto_content").html("");
+$("#kitolto_content").html("");
  var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
  db2.transaction(function(tx) {        
     tx.executeSql("select * from my_group where factive=0 order by fsort", [], function(tx, res) {
