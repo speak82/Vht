@@ -144,15 +144,16 @@
 		
 		$(document).on('pageinit', function() {
 		
-		$.get("http://vht.bestit.hu/javatest.php", function(data){
-				$( "#javatest" ).html( data );
-				
-			});
+		
 			
 		});
 		
 		$( document ).delegate("#main", "pageinit", function() {
 		
+		$.get("http://vht.bestit.hu/javatest.php", function(data){
+				$( "#javatest" ).html( data );
+				
+			});
 				
 		});
 		
