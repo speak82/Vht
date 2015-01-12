@@ -71,7 +71,7 @@
 
 <!-- kitolto -->
 <div data-role="page" id="kitolto">
-	<div data-role="header" class="myheader" data-position="fixed" data-fullscreen="false" style="background-image: url('img/header.png'); height:140px; background-color:#ffffff;">
+	<div data-role="header" class="myheader" data-fullscreen="false" style="background-image: url('img/header.png'); height:140px; background-color:#ffffff;">
 		<div class="mybutton myleft" id="myhome"><a href="#nav-panel" data-icon="bars"><i class="glyphicon glyphicon-tasks" style="font-size:70px"></i></a>	</div>
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
@@ -141,16 +141,57 @@
 		
 		$(document).on('pageinit', function() {
 		
-		
+		$("#kitolto_content").html("");
+ var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
+ db2.transaction(function(tx) {        
+    tx.executeSql("select * from my_group where factive=0 order by fsort", [], function(tx, res) {
+    for(var i = 0;i<=res.rows.length;i++){
+    
+    $("#kitolto_content").append('<h2 onClick="getReq('+res.rows.item(i).id+')" data-sort="'+(i+1)+'" id="h2_'+res.rows.item(i).id+'">'+(i+1)+'. '+Base64.decode(res.rows.item(i).fname)+'</h2><div class="my_cs" id="my_cs'+res.rows.item(i).id+'" style="display:none;"></div>');
+//    alert('<h2 id="my_cs'+res.rows.item(i).id+'">');
+    }
+    
+    
+    });
+    
+    
+    
+    
+});
+
+db2.transaction(function(tx) {        
+tx.executeSql("select * from my_request where factive=0 order by fsort", [], function(tx, res2) {
+	for(var i2 = 0;i2<=res2.rows.length;i2++){
+	//$("#my_cs"+res2.rows.item(i2).fgroup).append('<p>'+Base64.decode(res2.rows.item(i2).fname)+'</p>');
+	//$("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="myline">');
+
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="myline">');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="szoveg">'+Base64.decode(res2.rows.item(i2).fname)+'');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="szoveg_input"><textarea name="input'+res2.rows.item(i2).id+'" id="input'+res2.rows.item(i2).id+'" style="display:none;"></textarea><br></div>');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('</div>');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="kitĂślt"><div id="mykitolt'+res2.rows.item(i2).id+'">');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<fieldset data-role="controlgroup" data-type="horizontal"><input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'a" value="nem" checked="checked"><label for="radio-choice-h-'+res2.rows.item(i2).id+'a">Nem</label><input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'b" value="Igen"><label for="radio-choice-h-'+res2.rows.item(i2).id+'b">Igen</label><label for="select-more-'+res2.rows.item(i2).id+'a" class="ui-hidden-accessible">More</label><select name="select'+res2.rows.item(i2).id+'" id="select-more-'+res2.rows.item(i2).id+'a"><option >---</option><option >1</option><option >2</option><option >3</option><option >4</option><option >5</option></select></fieldset>').trigger("create");
+$("#my_cs"+res2.rows.item(i2).fgroup).append('</div><a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-pencil" onclick="getInput('+res2.rows.item(i2).id+')"></i></a>').trigger("create");
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-camera" onclick="getImage();"></i></a>').trigger("create");
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-volume-up" onclick="captureAudio();"></i></a>').trigger("create");
+$("#my_cs"+res2.rows.item(i2).fgroup).append('</div>');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('</div>');
+
+	
+ }
+
+			
+});
+});
 			
 		});
 		
 		$( document ).delegate("#kitolto", "pageinit", function() {
 		
-		$.get("http://vht.bestit.hu/javatest.php", function(data){
+		/*$.get("http://vht.bestit.hu/javatest.php", function(data){
 				$( "#javatest" ).html( data );
 				
-			});
+			});*/
 				
 		});
 		
@@ -212,6 +253,10 @@
 
 		function getInput(id) {
 		$("#input"+id).toggle();
+		}
+		
+		 function getReq(id) {
+			$("#my_cs"+id).toggle();
 		}
 		
 	var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(e){var t="";var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f<e.length){n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n>>2;o=(n&3)<<4|r>>4;u=(r&15)<<2|i>>6;a=i&63;if(isNaN(r)){u=a=64}else if(isNaN(i)){a=64}t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)}return t},decode:function(e){var t="";var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(f<e.length){s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r)}if(a!=64){t=t+String.fromCharCode(i)}}t=Base64._utf8_decode(t);return t},_utf8_encode:function(e){e=e.replace(/\r\n/g,"\n");var t="";for(var n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r)}else if(r>127&&r<2048){t+=String.fromCharCode(r>>6|192);t+=String.fromCharCode(r&63|128)}else{t+=String.fromCharCode(r>>12|224);t+=String.fromCharCode(r>>6&63|128);t+=String.fromCharCode(r&63|128)}}return t},_utf8_decode:function(e){var t="";var n=0;var r=c1=c2=0;while(n<e.length){r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r);n++}else if(r>191&&r<224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)<<6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)<<12|(c2&63)<<6|c3&63);n+=3}}return t}}
