@@ -204,9 +204,9 @@ border:1px solid #b11116;
 padding-left:30px;
 }
 #kitolto_content i {
-font-size:36px;
+font-size:26px;
 color:#c2c2c2;
-padding-right:36px;
+/*padding-right:36px;*/
 }
 #kitolto_content .myline { display:  block; overflow:auto; }
 /*
