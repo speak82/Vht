@@ -147,7 +147,18 @@
 		
 		$( document ).delegate("#main", "pageshow", function() {
 		
-$("#kitolto_content").html("");
+
+				
+		});
+		
+		$( document ).delegate("#kitolto", "pageinit", function() {
+		
+		/*$.get("http://vht.bestit.hu/javatest.php", function(data){
+				$( "#javatest" ).html( data );
+				
+			});*/
+			
+			$("#kitolto_content").html("");
  var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
  db2.transaction(function(tx) {        
     tx.executeSql("select * from my_group where factive=0 order by fsort", [], function(tx, res) {
@@ -175,15 +186,6 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div>');
 			
 });
 });
-				
-		});
-		
-		$( document ).delegate("#kitolto", "pageinit", function() {
-		
-		/*$.get("http://vht.bestit.hu/javatest.php", function(data){
-				$( "#javatest" ).html( data );
-				
-			});*/
 				
 		});
 		
