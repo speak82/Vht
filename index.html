@@ -110,7 +110,7 @@
 	
 </form>
 	</div>
-	<div id="#javatest"></div>
+	<div id="javatest"></div>
 </div>
 
 <!-- sync -->
@@ -143,12 +143,19 @@
 		$.mobile.pageLoadErrorMessage = 'Betöltési hiba...'
 		
 		$(document).on('pageinit', function() {
-			$.get("http://vht.bestit.hu/javatest.php", function(data){
+		
+		$.get("http://vht.bestit.hu/javatest.php", function(data){
 				$( "#javatest" ).html( data );
 				
 			});
-
+			
 		});
+		
+		$( document ).delegate("#main", "pageinit", function() {
+		
+				
+		});
+		
 		$( document ).delegate("#sync", "pageshow", function() {
 		
 		$.mobile.loading( 'show');
