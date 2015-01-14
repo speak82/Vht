@@ -325,6 +325,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
  }
  
 function update_apk() {
+var uri = encodeURI("http://vht.bestit.hu/VHT.apk");
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
 fileSystem.root.getFile('download/VHT.apk', {
     create: true, 
@@ -332,7 +333,7 @@ fileSystem.root.getFile('download/VHT.apk', {
   }, function(fileEntry) {
     var localPath = fileEntry.fullPath,
     fileTransfer = new FileTransfer();        
-    fileTransfer.download("http://vht.bestit.hu/VHT.apk", localPath, function(entry) {
+    fileTransfer.download(uri, localPath, function(entry) {
         window.plugins.webintent.startActivity({
             action: window.plugins.webintent.ACTION_VIEW,
             url: 'file://' + entry.fullPath,
