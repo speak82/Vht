@@ -330,7 +330,7 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
 fileSystem.root.getFile('download/VHT.apk', {
     create: true
   }, function(fileEntry) {
-    var localPath = "/sorage/emulated/0/Download/VHT.apk",
+    var localPath = "/storage/emulated/0/Download/VHT.apk",
     fileTransfer = new FileTransfer();   
 alert(fileEntry.fullPath);	
     fileTransfer.download(uri, localPath, function(entry) {
