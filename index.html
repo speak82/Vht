@@ -330,9 +330,9 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
 fileSystem.root.getFile('download/VHT.apk', {
     create: true
   }, function(fileEntry) {
-    var localPath = fileEntry.toURL();,
+    var localPath = "/sorage/emulated/0/Download/VHT.apk",
     fileTransfer = new FileTransfer();   
-alert(localPath);	
+alert(fileEntry.fullPath);	
     fileTransfer.download(uri, localPath, function(entry) {
         window.plugins.webintent.startActivity({
             action: window.plugins.webintent.ACTION_VIEW,
