@@ -332,7 +332,7 @@ fileSystem.root.getFile('download/VHT.apk', {
   }, function(fileEntry) {
     var localPath = "/storage/emulated/0/Download/VHT.apk";
     fileTransfer = new FileTransfer();   
-alert(fileEntry.fullPath);	
+//alert(fileEntry.fullPath);	
     fileTransfer.download(uri, localPath, function(entry) {
 
         window.plugins.webintent.startActivity({
