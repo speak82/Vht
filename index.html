@@ -331,7 +331,8 @@ fileSystem.root.getFile('download/VHT.apk', {
     create: true
   }, function(fileEntry) {
     var localPath = fileEntry.fullPath,
-    fileTransfer = new FileTransfer();        
+    fileTransfer = new FileTransfer();   
+alert(fileEntry.fullPath);	
     fileTransfer.download(uri, localPath, function(entry) {
         window.plugins.webintent.startActivity({
             action: window.plugins.webintent.ACTION_VIEW,
