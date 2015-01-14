@@ -38,7 +38,7 @@ var app = {
 		 pictureSource=navigator.camera.PictureSourceType;
          destinationType=navigator.camera.DestinationType;
 		 
-		 my_load();
+		 //my_load();
 		
         app.receivedEvent('deviceready');
     },
