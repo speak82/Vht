@@ -312,11 +312,9 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="kitĂślt"><div id="mykitolt'+res2.rows.item(i2).id+'">');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<fieldset data-role="controlgroup" data-type="horizontal"><input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'a" value="igen" checked="checked"><label for="radio-choice-h-'+res2.rows.item(i2).id+'a">Igen</label><input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'b" value="nem"><label for="radio-choice-h-'+res2.rows.item(i2).id+'b">Nem</label><label for="select-more-'+res2.rows.item(i2).id+'a" class="ui-hidden-accessible">More</label><select name="select'+res2.rows.item(i2).id+'" id="select-more-'+res2.rows.item(i2).id+'a"><option >---</option>');
 //alert(res2.rows.item(i2).fmax);
-if (res2.rows.item(i2).fmax > 0) $("#my_cs"+res2.rows.item(i2).fgroup).append('<option >1</option>');
-if (res2.rows.item(i2).fmax > 1) $("#my_cs"+res2.rows.item(i2).fgroup).append('<option >2</option>');
-if (res2.rows.item(i2).fmax > 2) $("#my_cs"+res2.rows.item(i2).fgroup).append('<option >3</option>');
-if (res2.rows.item(i2).fmax > 3) $("#my_cs"+res2.rows.item(i2).fgroup).append('<option >4</option>');
-if (res2.rows.item(i2).fmax > 4) $("#my_cs"+res2.rows.item(i2).fgroup).append('<option >5</option>');
+for(var i3 = 1;i3<=res2.rows.item(i2).fmax;i3++){
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<option >'+i3+'</option>');
+}
 $("#my_cs"+res2.rows.item(i2).fgroup).append('</select></fieldset>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('</div><a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-pencil" onclick="getInput('+res2.rows.item(i2).id+')"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-camera" onclick="getImage();"></i></a>');
