@@ -312,7 +312,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="kitĂślt"><div id="mykitolt'+res2.rows.item(i2).id+'">');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<fieldset data-role="controlgroup" data-type="horizontal"><input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'a" value="igen" checked="checked"><label for="radio-choice-h-'+res2.rows.item(i2).id+'a">Igen</label><input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'b" value="nem"><label for="radio-choice-h-'+res2.rows.item(i2).id+'b">Nem</label><label for="select-more-'+res2.rows.item(i2).id+'a" class="ui-hidden-accessible">More</label><select name="select'+res2.rows.item(i2).id+'" id="select-more-'+res2.rows.item(i2).id+'a"><option >---</option>');
 //alert(res2.rows.item(i2).fmax);
-for(var i3 = 1;i3<=parseInt(res2.rows.item(i2).fmax);i3++{
+for(var i3 = 1;i3<=res2.rows.item(i2).fmax*1;i3++{
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<option >'+i3+'</option>');
 }
 $("#my_cs"+res2.rows.item(i2).fgroup).append('</select></fieldset>');
