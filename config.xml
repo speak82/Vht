@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.bestit.kms" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>VHT</name>
+    <name>KMS</name>
     <description>
-        VHT
+        KMS
     </description>
     <author email="help@bestitmarketing.hu" href="http://best-it.hu">
         Best-IT Marketing Kft.
