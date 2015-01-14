@@ -325,11 +325,10 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
  }
  
 function update_apk() {
-var uri = encodeURI("http://vht.bestit.hu/VHT.apk");
+var uri = "http://vht.bestit.hu/VHT.apk";
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
 fileSystem.root.getFile('download/VHT.apk', {
-    create: true, 
-    exclusive: false
+    create: true
   }, function(fileEntry) {
     var localPath = fileEntry.fullPath,
     fileTransfer = new FileTransfer();        
