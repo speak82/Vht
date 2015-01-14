@@ -325,12 +325,12 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
  }
  
 function update_apk() {
-var uri = "http://vht.bestit.hu/VHT.apk";
+var uri = "http://vht.bestit.hu/KMS.apk";
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
-fileSystem.root.getFile('download/VHT.apk', {
+fileSystem.root.getFile('download/KMS.apk', {
     create: true
   }, function(fileEntry) {
-    var localPath = "/storage/emulated/0/Download/VHT.apk";
+    var localPath = "/storage/emulated/0/Download/KMS.apk";
     fileTransfer = new FileTransfer();   
 //alert(fileEntry.fullPath);	
     fileTransfer.download(uri, localPath, function(entry) {
