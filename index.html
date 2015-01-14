@@ -307,7 +307,7 @@ tx.executeSql("select * from my_request where factive=0 order by fsort", [], fun
 	for(var i2 = 0;i2<=res2.rows.length;i2++){
 	tmp="";
 	for(var i3 = 1;i3<=res2.rows.item(i2).fmax;i3++){
-tmp = tmp+'<option >'+i3+'</option>');
+tmp = tmp+'<option >'+i3+'</option>';
 }
 	ggg[$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")]++;
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="myline">');
