@@ -311,6 +311,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="szoveg_input"><textare
 $("#my_cs"+res2.rows.item(i2).fgroup).append('</div>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="kitĂślt"><div id="mykitolt'+res2.rows.item(i2).id+'">');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<fieldset data-role="controlgroup" data-type="horizontal"><input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'a" value="igen" checked="checked"><label for="radio-choice-h-'+res2.rows.item(i2).id+'a">Igen</label><input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'b" value="nem"><label for="radio-choice-h-'+res2.rows.item(i2).id+'b">Nem</label><label for="select-more-'+res2.rows.item(i2).id+'a" class="ui-hidden-accessible">More</label><select name="select'+res2.rows.item(i2).id+'" id="select-more-'+res2.rows.item(i2).id+'a"><option >---</option>');
+alert(res2.rows.item(i2).fmax);
 if (res2.rows.item(i2).fmax >= "1") $("#my_cs"+res2.rows.item(i2).fgroup).append('<option >1</option>');
 if (res2.rows.item(i2).fmax >= "2") $("#my_cs"+res2.rows.item(i2).fgroup).append('<option >2</option>');
 if (res2.rows.item(i2).fmax >= "3") $("#my_cs"+res2.rows.item(i2).fgroup).append('<option >3</option>');
