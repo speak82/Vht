@@ -292,7 +292,7 @@ $("#kitolto_content").html("");
 db2.transaction(function(tx) {        
 tx.executeSql("select * from my_request where factive=0 order by fsort", [], function(tx, res2) {
 	for(var i2 = 0;i2<=res2.rows.length;i2++){
-	ggg[$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")];
+	ggg[$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")]++;
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="myline">');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="szoveg">'+$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")+'.'+ggg[$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")]+'. '+Base64.decode(res2.rows.item(i2).fname)+'');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="szoveg_input"><textarea name="input'+res2.rows.item(i2).id+'" id="input'+res2.rows.item(i2).id+'" style="display:none;"></textarea><br></div>');
