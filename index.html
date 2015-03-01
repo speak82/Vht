@@ -515,7 +515,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 		
 		function getImage() {
       navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 100,
-    destinationType: Camera.DestinationType.DATA_URL
+    destinationType: Camera.DestinationType.FILE_URI
 });
  
         }
