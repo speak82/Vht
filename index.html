@@ -558,7 +558,7 @@ $("#kitolto_content6").html("");
 $("#kitolto_content7").html("");
  var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
  db2.transaction(function(tx) {        
-    tx.executeSql("select * from my_group where fgroup = 1 factive=0 order by fsort", [], function(tx, res) {
+    tx.executeSql("select * from my_group where factive=0 order by fsort", [], function(tx, res) {
     for(var i = 0;i<=res.rows.length;i++){
     $("#kitolto_content"+res.rows.item(i).fgroup).append('<h2 onClick="getReq('+res.rows.item(i).id+')" data-sort="'+(i+1)+'" id="h2_'+res.rows.item(i).id+'">'+(i+1)+'. '+Base64.decode(res.rows.item(i).fname)+'</h2><div class="my_cs" id="my_cs'+res.rows.item(i).id+'" data-num="'+(i+1)+'" style="display:none;"></div>');
     ggg[res.rows.item(i).id] = 0;
