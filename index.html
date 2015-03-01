@@ -513,6 +513,21 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 		});
 		
 		function getImage() {
+      navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 100,
+    destinationType: Camera.DestinationType.DATA_URL
+});
+ 
+        }
+		
+		function onSuccess(imageURI) {
+    $("#kitolto_content2").html(imageURI);
+}
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+		
+		function getImage22() {
           navigator.camera.getPicture(function(imageURI){
 
 			window.resolveLocalFileSystemURI(imageUri, function(fileEntry) {
