@@ -549,13 +549,13 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 function my_load() {
 var tmp = "";
 var ggg = [];
-$("#kitolto_content1).html("");
-$("#kitolto_content2).html("");
-$("#kitolto_content3).html("");
-$("#kitolto_content4).html("");
-$("#kitolto_content5).html("");
-$("#kitolto_content6).html("");
-$("#kitolto_content7).html("");
+$("#kitolto_content1").html("");
+$("#kitolto_content2").html("");
+$("#kitolto_content3").html("");
+$("#kitolto_content4").html("");
+$("#kitolto_content5").html("");
+$("#kitolto_content6").html("");
+$("#kitolto_content7").html("");
  var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
  db2.transaction(function(tx) {        
     tx.executeSql("select * from my_group where fgroup = 1 factive=0 order by fsort", [], function(tx, res) {
