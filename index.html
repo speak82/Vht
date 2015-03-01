@@ -521,8 +521,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
         }
 		
 		function onSuccessphoto(imageData) {
-    var image = document.getElementById('smallImage');
-    image.src = "data:image/jpeg;base64," + imageData;
+    alert(imageData);
 }
 
 function onFailphoto(message) {
