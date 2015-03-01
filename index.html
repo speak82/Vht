@@ -190,6 +190,7 @@
 	<label for="name3">Részt vett személy: </label>
     <input type="text" name="name3" id="name3" value=""  />
 	</div>	
+	<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
 	<div id="kitolto_content2">
 	</div>
 	<br>
@@ -514,14 +515,14 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 		
 		function getImage() {
       navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 100,
-    destinationType: Camera.DestinationType.FILE_URI,
-       sourceType: Camera.PictureSourceType.PHOTOLIBRARY 
+    destinationType: Camera.DestinationType.DATA_URL
 });
  
         }
 		
-		function onSuccessphoto(imageURI) {
-    $("#kitolto_content2").html(imageURI);
+		function onSuccessphoto(imageData) {
+    var image = document.getElementById('smallImage');
+    image.src = "data:image/jpeg;base64," + imageData;
 }
 
 function onFailphoto(message) {
