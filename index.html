@@ -569,7 +569,7 @@ gggalap[7] = 0;
     tx.executeSql("select * from my_group where factive=0 order by fsort", [], function(tx, res) {
     for(var i = 0;i<=res.rows.length;i++){
 	gggalap[res.rows.item(i).fgroup]++;
-    $("#kitolto_content"+res.rows.item(i).fgroup).append('<h2 onClick="getReq('+res.rows.item(i).id+')" data-sort="'+(i+1)+'" id="h2_'+res.rows.item(i).id+'">'+(gggalap[res.rows.item(i).fgroup])+'. '+Base64.decode(res.rows.item(i).fname)+'</h2><div class="my_cs" id="my_cs'+res.rows.item(i).id+'" data-num="'+(res.rows.item(i).id)+'" style="display:none;"></div>');
+    $("#kitolto_content"+res.rows.item(i).fgroup).append('<h2 onClick="getReq('+res.rows.item(i).id+')" data-sort="'+(i+1)+'" id="h2_'+res.rows.item(i).id+'">'+(gggalap[res.rows.item(i).fgroup])+'. '+Base64.decode(res.rows.item(i).fname)+'</h2><div class="my_cs" id="my_cs'+res.rows.item(i).id+'" data-num="'+(gggalap[res.rows.item(i).fgroup])+'" data-num-inc="'+(res.rows.item(i).id)+'" style="display:none;"></div>');
     ggg[res.rows.item(i).id] = 0;
 	}
 });    
@@ -582,9 +582,9 @@ tx.executeSql("select * from my_request where factive=0 order by fsort", [], fun
 	for(var i3 = 1;i3<=res2.rows.item(i2).fmax;i3++){
 tmp = tmp+'<option >'+i3+'</option>';
 }
-	ggg[$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")]++;
+	ggg[$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num-inc")]++;
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="myline">');
-$("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="szoveg">'+$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")+'.'+ggg[$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")]+'. '+Base64.decode(res2.rows.item(i2).fname)+'');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="szoveg">'+$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")+'.'+ggg[$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num-inc")]+'. '+Base64.decode(res2.rows.item(i2).fname)+'');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="szoveg_input"><textarea name="input'+res2.rows.item(i2).id+'" id="input'+res2.rows.item(i2).id+'" style="display:none;"></textarea><br></div>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('</div>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="kitĂślt"><div id="mykitolt'+res2.rows.item(i2).id+'">');
