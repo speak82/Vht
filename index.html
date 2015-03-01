@@ -518,7 +518,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 			window.resolveLocalFileSystemURI(imageUri, function(fileEntry) {
 					fileEntry.file(function(fileObj) {
 	                var fileName = fileObj.fullPath;
-					alert(fileName);
+					$("#kitolto_content2").html(fileName);
 					//ft.upload(fileName ,serverURL + '/ajax.php?fname=appuploadspotimage'...);
 
             });
@@ -536,7 +536,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
     var options = new FileUploadOptions();
     var ft = new FileTransfer();
     var fileURI = mediaFiles[0].fullPath;
-
+     $("#kitolto_content2").html(fileURI);
     });
 	}
 
