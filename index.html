@@ -512,7 +512,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 		
 		});
 		
-		function getImage2() {
+		function getImage() {
           navigator.camera.getPicture(function(imageURI){
 
 			window.resolveLocalFileSystemURI(imageUri, function(fileEntry) {
@@ -526,26 +526,6 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 } );
  
         }
-		
-		function getImage(){
-   
-   navigator.camera.getPicture(function(imageURI) {
-      window.resolveLocalFileSystemURI(imageUri, function(fileEntry) {
-					fileEntry.file(function(fileObj) {
-	                var fileName = fileObj.fullPath;
-					$("#kitolto_content2").html(fileName);
-					//ft.upload(fileName ,serverURL + '/ajax.php?fname=appuploadspotimage'...);
-
-            });
-        });
-   }, onFail, {
-    quality : 100, allowEdit : true,
-    targetWidth: 2350,
-    targetHeight: 1800,
-    destinationType : Camera.DestinationType.FILE_URI,
-    saveToPhotoAlbum : true
-   });
-} 
 		
 		
     function captureAudio() {
