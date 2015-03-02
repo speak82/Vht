@@ -68,7 +68,7 @@
 		<div class="mybutton myleft" id="myhome"><a href="#nav-panel" data-icon="bars"><i class="glyphicon glyphicon-tasks" style="font-size:70px"></i></a>	</div>
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
-	<div data-role="main" class="mycontent"><br><br><br>
+	<div data-role="content" class="mycontent"><br><br><br>
 	<center>
 	<a href="#kitolto2"><img src="img/menu_01.jpg" border="0"></a><a href="#kitolto1"><img src="img/menu_02.jpg" border="0"></a><a href="#kitolto3"><img src="img/menu_03.jpg" border="0"></a><br>
 	<a href="#kitolto4"><img src="img/menu_04.jpg" border="0"></a><a href="#kitolto5"><img src="img/menu_05.jpg" border="0"></a><a href="#kitolto6"><img src="img/menu_06.jpg" border="0"></a><a href="#kitolto7"><img src="img/menu_07.jpg" border="0"></a>
@@ -83,7 +83,7 @@
 		<div class="mybutton myleft" id="myhome"><a href="#nav-panel" data-icon="bars"><i class="glyphicon glyphicon-tasks" style="font-size:70px"></i></a>	</div>
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
-	<div data-role="main" class="ui-content mycontent">
+	<div data-role="content" class="ui-content mycontent">
 	<form name="form_1" id="form_1">
 	<div data-role="fieldcontain">
     <label for="name">Pályázati Sorszám:</label>
@@ -207,7 +207,7 @@
 		<div class="mybutton myleft" id="myhome"><a href="#nav-panel" data-icon="bars"><i class="glyphicon glyphicon-tasks" style="font-size:70px"></i></a>	</div>
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
-	<div data-role="main" class="ui-content mycontent">
+	<div data-role="content" class="ui-content mycontent">
 	<form name="form_3" id="form_3">
 	<div data-role="fieldcontain">
    <label for="name">Pályázati Sorszám:</label>
@@ -252,7 +252,7 @@
 		<div class="mybutton myleft" id="myhome"><a href="#nav-panel" data-icon="bars"><i class="glyphicon glyphicon-tasks" style="font-size:70px"></i></a>	</div>
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
-	<div data-role="main" class="ui-content mycontent">
+	<div data-role="content" class="ui-content mycontent">
 	<form name="form_4" id="form_4">
 	<div data-role="fieldcontain">
    <label for="name">Pályázati Sorszám:</label>
@@ -297,7 +297,7 @@
 		<div class="mybutton myleft" id="myhome"><a href="#nav-panel" data-icon="bars"><i class="glyphicon glyphicon-tasks" style="font-size:70px"></i></a>	</div>
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
-	<div data-role="main" class="ui-content mycontent">
+	<div data-role="content" class="ui-content mycontent">
 	<form name="form_5" id="form_5">
 	<div data-role="fieldcontain">
    <label for="name">Pályázati Sorszám:</label>
@@ -342,7 +342,7 @@
 		<div class="mybutton myleft" id="myhome"><a href="#nav-panel" data-icon="bars"><i class="glyphicon glyphicon-tasks" style="font-size:70px"></i></a>	</div>
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
-	<div data-role="main" class="ui-content mycontent">
+	<div data-role="content" class="ui-content mycontent">
 	<form name="form_6" id="form_6">
 	<div data-role="fieldcontain">
    <label for="name">Pályázati Sorszám:</label>
@@ -387,7 +387,7 @@
 		<div class="mybutton myleft" id="myhome"><a href="#nav-panel" data-icon="bars"><i class="glyphicon glyphicon-tasks" style="font-size:70px"></i></a>	</div>
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
-	<div data-role="main" class="ui-content mycontent">
+	<div data-role="content" class="ui-content mycontent">
 	<form name="form_7" id="form_7">
 	<div data-role="fieldcontain">
    <label for="name">Pályázati Sorszám:</label>
@@ -639,13 +639,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('<br><br><div class="my_bub_1 my_hi
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<input type="hidden" name="photo'+res2.rows.item(i2).id+'" id="photo_'+res2.rows.item(i2).id+'"><div class="my_photo" id="my_photo_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div></div>\r\n</div>\r\n');
 
  }
-$("#kitolto1").trigger("pagecreate");
-$("#kitolto2").trigger("pagecreate");
-$("#kitolto3").trigger("pagecreate");
-$("#kitolto4").trigger("pagecreate");
-$("#kitolto5").trigger("pagecreate");
-$("#kitolto6").trigger("pagecreate");
-$("#kitolto7").trigger("pagecreate");
+$('[data-role="content"]').trigger('create');
 
 });
 });	
