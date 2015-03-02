@@ -187,7 +187,7 @@ text-shadow: 0 /*{a-page-shadow-x}*/ 1px /*{a-page-shadow-y}*/ 0 /*{a-page-shado
 
 }
 
-#kitolto_content h2 { 
+.kitolto_content h2 { 
 border:1px solid #a2a2a2;
 background-color:#b11116;
 color:#ffffff;
@@ -196,19 +196,19 @@ font-weight:bold;
 text-shadow:none;
 margin-bottom:0px;
 }
-#kitolto_content { 
+.kitolto_content { 
 font-size:26px;
 }
-#kitolto_content .myline {
+.kitolto_content .myline {
 border:1px solid #b11116;
 padding-left:30px;
 }
-#kitolto_content i {
+.kitolto_content i {
 font-size:26px;
 color:#b11116;
 /*padding-right:36px;*/
 }
-#kitolto_content .myline { display:  block; overflow:auto; }
+.kitolto_content .myline { display:  block; overflow:auto; }
 /*
 #kitolto_content .szoveg { float:left; width:900px; }
 #kitolto_content .kitolt { float:right; width:240px;}
