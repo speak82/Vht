@@ -439,6 +439,7 @@
 <script type="text/javascript">
 		app.initialize();
 		var start = 0;
+		var editid = 0;
         var storage = window.localStorage;
 		$.mobile.defaultPageTransition = 'none';
 		$.mobile.pageLoadErrorMessage = 'Betöltési hiba...'
@@ -513,7 +514,8 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 		
 		});
 		
-		function getImage() {
+		function getImage(id) {
+		editid = id;
       navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 100,
     destinationType: Camera.DestinationType.FILE_URI,
 	targetWidth: 2350,
@@ -539,7 +541,7 @@ function onFailphoto(message) {
 			window.resolveLocalFileSystemURI(imageUri, function(fileEntry) {
 					fileEntry.file(function(fileObj) {
 	                var fileName = fileObj.fullPath;
-					$("#kitolto_content2").html(fileName);
+					$("#my_photo_"+editid).html(fileName);
 					//ft.upload(fileName ,serverURL + '/ajax.php?fname=appuploadspotimage'...);
 
             });
@@ -549,7 +551,8 @@ function onFailphoto(message) {
         }
 		
 		
-    function captureAudio() {
+    function captureAudio(id) {
+	editid=id;
        navigator.device.capture.captureAudio(function(mediaFiles){
  
     // mediaFiles will be an array of MediaFile objects
@@ -557,7 +560,7 @@ function onFailphoto(message) {
     var options = new FileUploadOptions();
     var ft = new FileTransfer();
     var fileURI = mediaFiles[0].fullPath;
-$("#kitolto_content2").html(fileURI);
+$("#my_photo_"+editid).html(fileURI);
     });
 	}
 
@@ -615,8 +618,8 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div>\r\n');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="kitĂślt"><div id="mykitolt'+res2.rows.item(i2).id+'">');
 //$("#my_cs"+res2.rows.item(i2).fgroup).append('<fieldset data-role="controlgroup" data-type="horizontal">\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'a" value="igen" checked="checked"><label for="radio-choice-h-'+res2.rows.item(i2).id+'a">Igen</label>\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'b" value="nem"><label for="radio-choice-h-'+res2.rows.item(i2).id+'b">Nem</label><label for="select-more-'+res2.rows.item(i2).id+'a" class="ui-hidden-accessible">More</label>\r\n<select name="select'+res2.rows.item(i2).id+'" id="select-more-'+res2.rows.item(i2).id+'a"><option >---</option>'+tmp+'</select></fieldset>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('</div><a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-pencil" onclick="getInput('+res2.rows.item(i2).id+')"></i></a>');
-$("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-camera" onclick="getImage();"></i></a>');
-$("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-volume-up" onclick="captureAudio();"></i></a>');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-camera" onclick="getImage('+res2.rows.item(i2).id+');"></i></a>');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-volume-up" onclick="captureAudio('+res2.rows.item(i2).id+');"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<br><br><div class="my_bub_1 my_hidden" id="my_bub_1_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_2 my_hidden" id="my_bub_2_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_3 my_hidden" id="my_bub_3_'+res2.rows.item(i2).id+'">0</div>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="my_photo" id="my_photo_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div></div>\r\n</div>\r\n');
 
