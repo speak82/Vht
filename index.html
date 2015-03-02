@@ -652,12 +652,38 @@ $("#kitolto_content7").trigger("create");
 
  }
  
+ function win(r) {
+    alert("Code = " + r.responseCode);
+    console.log("Response = " + r.response);
+    console.log("Sent = " + r.bytesSent);
+}
+
+function fail(error) {
+    alert("An error has occurred: Code = " + error.code);
+    console.log("upload error source " + error.source);
+    console.log("upload error target " + error.target);
+}
+
 function toserver(src) {
 
 $("#"+src+" .my_photo").each(function( index ) {
 	var id = $(this).attr('data-id');
 	$(this).find("img").each(function( index ) {
     alert(id+'-'+$(this).attr('src'));
+			var imageURI = $(this).attr('src');
+	        var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+
+            var params = {};
+            params.value1 = "test";
+            params.value2 = "param";
+
+            options.params = params;
+
+            var ft = new FileTransfer();
+            ft.upload(imageURI, encodeURI("http://vht.bestit.hu/uploads.php"), win, fail, options);
 });
 });
 
