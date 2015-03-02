@@ -654,12 +654,12 @@ $("#kitolto_content7").trigger("create");
  
  function win(r) {
     //alert("Code = " + r.responseCode);
-    alert("Response = " + r.response);
+    //alert("Response = " + r.response);
     //console.log("Sent = " + r.bytesSent);
 }
 
 function fail(error) {
-    alert("An error has occurred: Code = " + error.code);
+    //alert("An error has occurred: Code = " + error.code);
     //console.log("upload error source " + error.source);
     //console.log("upload error target " + error.target);
 }
@@ -669,7 +669,7 @@ function toserver(src) {
 $("#"+src+" .my_photo").each(function( index ) {
 	var id = $(this).attr('data-id');
 	$(this).find("img").each(function( index ) {
-    alert(id+'-'+$(this).attr('src'));
+   // alert(id+'-'+$(this).attr('src'));
 			var imageURI = $(this).attr('src');
 	        var options = new FileUploadOptions();
             options.fileKey="file";
@@ -689,9 +689,10 @@ $("#"+src+" .my_photo").each(function( index ) {
 
  var perfTimes = $("#"+src).serializeArray();
  perfTimes.push({name: 'lista', value: src});
- alert(perfTimes);
+ //alert(perfTimes);
   $.post("http://vht.bestit.hu/post.php", perfTimes,      function(data) {
-    alert(data);
+    //alert(data);
+	alert("Sikeres mentés.")
   });
 
 }
