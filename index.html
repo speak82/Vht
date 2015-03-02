@@ -539,7 +539,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 		
 		function onSuccessphoto(imageUri) {
    
-				$("#my_photo_"+editid).html($("#my_photo_"+editid).html()+'<img src="'+imageUri+'" width="180">');
+				$("#my_photo_"+editid).html($("#my_photo_"+editid).html()+'<img class="upphoto" data-id="'+editid+'" src="'+imageUri+'" width="180">');
 				$("#photo_"+editid).val($("#photo_"+editid).val()+imageUri+';');
 
 }
@@ -653,8 +653,6 @@ $("#kitolto_content7").trigger("create");
  }
  
 function toserver(src) {
-
-
 
  var perfTimes = $("#"+src).serializeArray();
  perfTimes.push({name: 'lista', value: src});
