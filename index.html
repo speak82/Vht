@@ -87,31 +87,31 @@
 	<form name="form_1" id="form_1">
 	<div data-role="fieldcontain">
     <label for="name">Pályázati Sorszám:</label>
-    <input type="text" name="name" id="name" value=""  />
+    <input type="text" name="name1" id="name1" value=""  />
 	</div>	
 	<div data-role="fieldcontain">
 	<label for="name1">Cég  neve:</label>
-    <input type="text" name="name1" id="name1" value=""  />
-	</div>	
-	<div data-role="fieldcontain">
-	<label for="name1">Cég  címe:</label>
-    <input type="text" name="name1" id="name1" value=""  />
-	</div>	
-	<div data-role="fieldcontain">
-	<label for="name1">Auditor neve:</label>
-    <input type="text" name="name1" id="name1" value=""  />
-	</div>	
-	<div data-role="fieldcontain">
-	<label for="name1">Audit időpontja:</label>
-    <input type="text" name="name1" id="name1" value=""  />
-	</div>	
-	<div data-role="fieldcontain">
-	<label for="name2">Azonosító:</label>
     <input type="text" name="name2" id="name2" value=""  />
 	</div>	
 	<div data-role="fieldcontain">
-	<label for="name3">Részt vett személy: </label>
+	<label for="name1">Cég  címe:</label>
     <input type="text" name="name3" id="name3" value=""  />
+	</div>	
+	<div data-role="fieldcontain">
+	<label for="name1">Auditor neve:</label>
+    <input type="text" name="name4" id="name4" value=""  />
+	</div>	
+	<div data-role="fieldcontain">
+	<label for="name1">Audit időpontja:</label>
+    <input type="text" name="name5" id="name5" value=""  />
+	</div>	
+	<div data-role="fieldcontain">
+	<label for="name2">Azonosító:</label>
+    <input type="text" name="name6" id="name6" value=""  />
+	</div>	
+	<div data-role="fieldcontain">
+	<label for="name3">Részt vett személy: </label>
+    <input type="text" name="name7" id="name7" value=""  />
 	</div>	
 
 
@@ -165,34 +165,33 @@
 	<div data-role="main" class="ui-content mycontent">
 	<form name="form_2" id="form_2">
 	<div data-role="fieldcontain">
-    <label for="name">Pályázati Sorszám:</label>
-    <input type="text" name="name" id="name" value=""  />
+   <label for="name">Pályázati Sorszám:</label>
+    <input type="text" name="name1" id="name1" value=""  />
 	</div>	
 	<div data-role="fieldcontain">
 	<label for="name1">Cég  neve:</label>
-    <input type="text" name="name1" id="name1" value=""  />
-	</div>	
-	<div data-role="fieldcontain">
-	<label for="name1">Cég  címe:</label>
-    <input type="text" name="name1" id="name1" value=""  />
-	</div>	
-	<div data-role="fieldcontain">
-	<label for="name1">Auditor neve:</label>
-    <input type="text" name="name1" id="name1" value=""  />
-	</div>	
-	<div data-role="fieldcontain">
-	<label for="name1">Audit időpontja:</label>
-    <input type="text" name="name1" id="name1" value=""  />
-	</div>	
-	<div data-role="fieldcontain">
-	<label for="name2">Azonosító:</label>
     <input type="text" name="name2" id="name2" value=""  />
 	</div>	
 	<div data-role="fieldcontain">
-	<label for="name3">Részt vett személy: </label>
+	<label for="name1">Cég  címe:</label>
     <input type="text" name="name3" id="name3" value=""  />
 	</div>	
-	<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+	<div data-role="fieldcontain">
+	<label for="name1">Auditor neve:</label>
+    <input type="text" name="name4" id="name4" value=""  />
+	</div>	
+	<div data-role="fieldcontain">
+	<label for="name1">Audit időpontja:</label>
+    <input type="text" name="name5" id="name5" value=""  />
+	</div>	
+	<div data-role="fieldcontain">
+	<label for="name2">Azonosító:</label>
+    <input type="text" name="name6" id="name6" value=""  />
+	</div>	
+	<div data-role="fieldcontain">
+	<label for="name3">Részt vett személy: </label>
+    <input type="text" name="name7" id="name7" value=""  />
+	</div>	
 	<div id="kitolto_content2">
 	</div>
 	<br>
@@ -642,7 +641,13 @@ $("#kitolto_content7").trigger("create");
  }
  
 function toserver(src) {
-alert($("#"+src).serialize());
+
+ var perfTimes = $("#"+src).serialize();
+ perfTimes.push({name: 'lista', value: src});
+ alert(perfTimes);
+  $.post("http://vht.bestit.hu/post.php", perfTimes,      function(data) {
+    alert(data);
+  });
 
 }
  
