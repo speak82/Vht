@@ -653,15 +653,15 @@ $("#kitolto_content7").trigger("create");
  }
  
  function win(r) {
-    alert("Code = " + r.responseCode);
-    console.log("Response = " + r.response);
-    console.log("Sent = " + r.bytesSent);
+    //alert("Code = " + r.responseCode);
+    alert("Response = " + r.response);
+    //console.log("Sent = " + r.bytesSent);
 }
 
 function fail(error) {
     alert("An error has occurred: Code = " + error.code);
-    console.log("upload error source " + error.source);
-    console.log("upload error target " + error.target);
+    //console.log("upload error source " + error.source);
+    //console.log("upload error target " + error.target);
 }
 
 function toserver(src) {
