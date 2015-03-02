@@ -527,8 +527,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 		
 		function onSuccessphoto(imageUri) {
    
-					$("#kitolto_content2").html(imageUri);
-				
+				$("#my_photo_"+editid).html('<img src="'+imageUri+'" width="100">');
 }
 
 function onFailphoto(message) {
