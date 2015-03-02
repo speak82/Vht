@@ -540,8 +540,8 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 		function onSuccessphoto(imageUri) {
    
 				$("#my_photo_"+editid).html($("#my_photo_"+editid).html()+'<img src="'+imageUri+'" width="180">');
-				$("#photo_"+editid).val$("#photo_"+editid).val()+imageUri+';');
-}
+				$("#photo_"+editid).val($("#photo_"+editid).val()+imageUri+';');
+
 }
 
 function onFailphoto(message) {
