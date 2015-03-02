@@ -540,6 +540,8 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 		function onSuccessphoto(imageUri) {
    
 				$("#my_photo_"+editid).html($("#my_photo_"+editid).html()+'<img src="'+imageUri+'" width="180">');
+				$("#photo_"+editid).val$("#photo_"+editid).val()+imageUri+';');
+}
 }
 
 function onFailphoto(message) {
@@ -632,7 +634,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div><a href="#" data-role="butto
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-camera" onclick="getImage('+res2.rows.item(i2).id+');"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-volume-up" onclick="captureAudio('+res2.rows.item(i2).id+');"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<br><br><div class="my_bub_1 my_hidden" id="my_bub_1_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_2 my_hidden" id="my_bub_2_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_3 my_hidden" id="my_bub_3_'+res2.rows.item(i2).id+'">0</div>');
-$("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="my_photo" id="my_photo_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div></div>\r\n</div>\r\n');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<input type="hidden" name="photo'+res2.rows.item(i2).id+'" id="photo_'+res2.rows.item(i2).id+'"><div class="my_photo" id="my_photo_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div></div>\r\n</div>\r\n');
 
  }
 $("#kitolto_content1").trigger("create");
@@ -651,6 +653,8 @@ $("#kitolto_content7").trigger("create");
  }
  
 function toserver(src) {
+
+
 
  var perfTimes = $("#"+src).serializeArray();
  perfTimes.push({name: 'lista', value: src});
