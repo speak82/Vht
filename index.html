@@ -84,6 +84,7 @@
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
 	<div data-role="main" class="ui-content mycontent">
+	<form name="form_1" id="form_1">
 	<div data-role="fieldcontain">
     <label for="name">Pályázati Sorszám:</label>
     <input type="text" name="name" id="name" value=""  />
@@ -149,9 +150,9 @@
 	
 	</div>
 	<br>
-	<button type="button" class="btn btn-default">Befejezés</button>
+	<button type="button" class="btn btn-default" onclick="toserver('form_1');">Befejezés</button>
 	</center>
-	
+	</form>
 	</div>
 </div>
 
@@ -559,7 +560,7 @@ function onFailphoto(message) {
     var options = new FileUploadOptions();
     var ft = new FileTransfer();
     var fileURI = mediaFiles[0].fullPath;
-$("#my_photo_"+editid).html(fileURI);
+		//$("#my_photo_"+editid).html(fileURI);
     });
 	}
 
@@ -637,6 +638,11 @@ $("#kitolto_content7").trigger("create");
 
 
  }
+ 
+function toserver(src) {
+alert($("#"+src).serialize());
+
+}
  
 function update_apk() {
 var uri = "http://vht.bestit.hu/KMS.apk";
