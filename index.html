@@ -643,7 +643,7 @@ $("#kitolto_content7").trigger("create");
 function toserver(src) {
 
  var perfTimes = $("#"+src).serialize();
- perfTimes.push({name: 'lista', value: src});
+ //perfTimes.push({name: 'lista', value: src});
  alert(perfTimes);
   $.post("http://vht.bestit.hu/post.php", perfTimes,      function(data) {
     alert(data);
