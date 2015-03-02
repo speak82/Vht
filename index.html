@@ -654,6 +654,13 @@ $("#kitolto_content7").trigger("create");
  
 function toserver(src) {
 
+$("#"+src+" .my_photo").each(function( index ) {
+	var id = $(this).attr('data-id');
+	$(this).find("img").each(function( index ) {
+    alert(id+'-'+$(this).attr('src'));
+});
+});
+
  var perfTimes = $("#"+src).serializeArray();
  perfTimes.push({name: 'lista', value: src});
  alert(perfTimes);
