@@ -671,7 +671,10 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('<input type="hidden" name="photo'+
   setTimeout(function(){
         $.mobile.loading('show', {theme:"b", text:"Adatok betöltése...", textonly:true, textVisible: true});
     },1); 
- $.mobile.changePage(id);
+	setTimeout(function(){
+        $.mobile.changePage(id);
+    },10); 
+ 
  }
  
  function cpage() {
