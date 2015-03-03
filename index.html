@@ -58,7 +58,7 @@
 							<a href="" onclick="$('#kitolto2').trigger('create'); ">test2</a>
 						</li>
 						<li >
-							<a href="" onclick="my_loadpage('#kitolto2'); ">test2</a>
+							<a href="" onclick="cpage(); ">test2</a>
 						</li>
 						<li >
 							<a href="#sync">Szinkron</a>
@@ -76,7 +76,7 @@
 	</div>
 	<div data-role="main" class="mycontent"><br><br><br>
 	<center>
-	<a href="#" onclick="my_loadpage('#kitolto2');"><img src="img/menu_01.jpg" border="0"></a><a href="#kitolto1"><img src="img/menu_02.jpg" border="0"></a><a href="#kitolto3"><img src="img/menu_03.jpg" border="0"></a><br>
+	<a href="#kitolto2"><img src="img/menu_01.jpg" border="0"></a><a href="#kitolto1"><img src="img/menu_02.jpg" border="0"></a><a href="#kitolto3"><img src="img/menu_03.jpg" border="0"></a><br>
 	<a href="#kitolto4"><img src="img/menu_04.jpg" border="0"></a><a href="#kitolto5"><img src="img/menu_05.jpg" border="0"></a><a href="#kitolto6"><img src="img/menu_06.jpg" border="0"></a><a href="#kitolto7"><img src="img/menu_07.jpg" border="0"></a>
 	</center>
 	</div>
@@ -473,6 +473,12 @@
 				
 		});
 		
+		$( document ).on( "pageinit", "#kitolto2", function( event ) {
+$.mobile.loading('show', {theme:"b", text:"Adatok betöltése...", textonly:true, textVisible: true});
+});
+		
+		
+		
 		$( document ).delegate("#kitolto", "pageinit", function() {
 		
 		/*$.get("http://vht.bestit.hu/javatest.php", function(data){
@@ -657,8 +663,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('<input type="hidden" name="photo'+
  
  function my_loadpage(id){
  $.mobile.loading('show', {theme:"b", text:"Adatok betöltése...", textonly:true, textVisible: true});
- $(id).trigger('create');
- $.mobile.loading('hide');
+ //$('#kitolto1').trigger('create');
  $.mobile.changePage(id);
  $.mobile.loading('hide');
  }
