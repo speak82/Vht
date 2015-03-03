@@ -76,7 +76,7 @@
 	</div>
 	<div data-role="main" class="mycontent"><br><br><br>
 	<center>
-	<a href="#kitolto2"><img src="img/menu_01.jpg" border="0"></a><a href="#kitolto1"><img src="img/menu_02.jpg" border="0"></a><a href="#kitolto3"><img src="img/menu_03.jpg" border="0"></a><br>
+	<a href="#" onclick="my_loadpage('#kitolto2');"><img src="img/menu_01.jpg" border="0"></a><a href="#kitolto1"><img src="img/menu_02.jpg" border="0"></a><a href="#kitolto3"><img src="img/menu_03.jpg" border="0"></a><br>
 	<a href="#kitolto4"><img src="img/menu_04.jpg" border="0"></a><a href="#kitolto5"><img src="img/menu_05.jpg" border="0"></a><a href="#kitolto6"><img src="img/menu_06.jpg" border="0"></a><a href="#kitolto7"><img src="img/menu_07.jpg" border="0"></a>
 	</center>
 	</div>
@@ -596,7 +596,7 @@ function onFailphoto(message) {
 
 function my_load() {
 //alert("load");
-$.mobile.loading('show', {theme:"b", text:"Adatok betöltése...", textonly:true, textVisible: true});
+
 var tmp = "";
 var ggg = [];
 var gggalap = [];
@@ -646,13 +646,20 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('<br><br><div class="my_bub_1 my_hi
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<input type="hidden" name="photo'+res2.rows.item(i2).id+'" id="photo_'+res2.rows.item(i2).id+'"><div class="my_photo" id="my_photo_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div></div>\r\n</div>\r\n');
 
  }
-$.mobile.loading('hide');
+
 
 });
 });	
 
 
 
+ }
+ 
+ function my_loadpage(id){
+ $.mobile.loading('show', {theme:"b", text:"Adatok betöltése...", textonly:true, textVisible: true});
+ //$('#kitolto1').trigger('create');
+ $.mobile.changePage(id);
+ $.mobile.loading('hide');
  }
  
  function cpage() {
