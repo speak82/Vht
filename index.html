@@ -473,9 +473,22 @@
 				
 		});
 		
-		$( document ).on( "pageinit", "#kitolto2", function( event ) {
+		$( document ).on( "pagebeforecreate", "#kitolto2", function( event ) {
 $.mobile.loading('show', {theme:"b", text:"Adatok betöltése...", textonly:true, textVisible: true});
 });
+
+$(document).on('pagebeforecreate', '[data-role="page"]', function(){     
+    setTimeout(function(){
+        $.mobile.loading('show');
+    },1);    
+});
+
+$(document).on('pageshow', '[data-role="page"]', function(){  
+    setTimeout(function(){
+        $.mobile.loading('hide');
+    },300);      
+});
+
 		
 		
 		
