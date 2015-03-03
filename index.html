@@ -657,7 +657,8 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('<input type="hidden" name="photo'+
  
  function my_loadpage(id){
  $.mobile.loading('show', {theme:"b", text:"Adatok betöltése...", textonly:true, textVisible: true});
- //$('#kitolto1').trigger('create');
+ $(id).trigger('create');
+ $.mobile.loading('hide');
  $.mobile.changePage(id);
  $.mobile.loading('hide');
  }
