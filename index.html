@@ -593,6 +593,8 @@ function onFailphoto(message) {
     var ft = new FileTransfer();
     var fileURI = mediaFiles[0].fullPath;
 		//$("#my_photo_"+editid).html(fileURI);
+		$("#my_audio_"+editid).html($("#my_audio_"+editid).html()+'<img class="upphoto" data-id="'+editid+'" data-src="'+imageUri+'" src="lib/img/play.png" width="120">');
+				$("#audio_"+editid).val($("#audio_"+editid).val()+imageUri+';');
     });
 	}
 
@@ -650,12 +652,12 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="szoveg">'+$("#my_cs"+r
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="szoveg_input"><textarea name="input'+res2.rows.item(i2).id+'" id="input'+res2.rows.item(i2).id+'" style="display:none;"></textarea><br></div>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('</div>\r\n');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="kitĂślt"><div id="mykitolt'+res2.rows.item(i2).id+'">');
-$("#my_cs"+res2.rows.item(i2).fgroup).append('<fieldset data-role="controlgroup" data-type="horizontal">\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'a" value="igen" checked="checked"><label for="radio-choice-h-'+res2.rows.item(i2).id+'a">Igen</label>\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'b" value="nem"><label for="radio-choice-h-'+res2.rows.item(i2).id+'b">Nem</label><label for="select-more-'+res2.rows.item(i2).id+'a" class="ui-hidden-accessible">More</label>\r\n<select name="select'+res2.rows.item(i2).id+'" id="select-more-'+res2.rows.item(i2).id+'a"><option >---</option>'+tmp+'</select></fieldset>');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<fieldset data-role="controlgroup" data-type="horizontal">\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'a" value="igen" checked="checked"><label for="radio-choice-h-'+res2.rows.item(i2).id+'a">Igen</label>\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'b" value="nem"><label for="radio-choice-h-'+res2.rows.item(i2).id+'b">Nem</label><label for="select-more-'+res2.rows.item(i2).id+'a" class="ui-hidden-accessible">More</label>\r\n<select name="select'+res2.rows.item(i2).id+'" id="select-more-'+res2.rows.item(i2).id+'a"><option >Nem vonatkozik</option><option >0</option>'+tmp+'</select></fieldset>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('</div><a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-pencil" onclick="getInput('+res2.rows.item(i2).id+')"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-camera" onclick="getImage('+res2.rows.item(i2).id+');"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-volume-up" onclick="captureAudio('+res2.rows.item(i2).id+');"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<br><br><div class="my_bub_1 my_hidden" id="my_bub_1_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_2 my_hidden" id="my_bub_2_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_3 my_hidden" id="my_bub_3_'+res2.rows.item(i2).id+'">0</div>');
-$("#my_cs"+res2.rows.item(i2).fgroup).append('<input type="hidden" name="photo'+res2.rows.item(i2).id+'" id="photo_'+res2.rows.item(i2).id+'"><div class="my_photo" id="my_photo_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div></div>\r\n</div>\r\n');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<input type="hidden" name="photo'+res2.rows.item(i2).id+'" id="photo_'+res2.rows.item(i2).id+'"><div class="my_photo" id="my_photo_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div><input type="hidden" name="audio'+res2.rows.item(i2).id+'" id="audio_'+res2.rows.item(i2).id+'"><div class="my_photo" id="my_audio_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div></div>\r\n</div>\r\n');
 
  }
 
@@ -700,7 +702,7 @@ function fail(error) {
 }
 
 function toserver(src) {
-
+ $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
 $("#"+src+" .my_photo").each(function( index ) {
 	var id = $(this).attr('data-id');
 	$(this).find("img").each(function( index ) {
@@ -727,7 +729,9 @@ $("#"+src+" .my_photo").each(function( index ) {
  //alert(perfTimes);
   $.post("http://vht.bestit.hu/post.php", perfTimes,      function(data) {
     //alert(data);
-	alert("Sikeres mentés.")
+	 $.mobile.loading('hide');
+	alert("Sikeres mentés.");
+	
   });
 
 }
