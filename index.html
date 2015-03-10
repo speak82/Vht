@@ -116,7 +116,7 @@
     <input type="text" name="name6" id="name6" value=""  />
 	</div>	
 	<div data-role="fieldcontain">
-	<label for="name3">Részt vett személy: </label>
+	<label for="name3">Résztvevők: </label>
     <input type="text" name="name7" id="name7" value=""  />
 	</div>	
 
@@ -195,7 +195,7 @@
     <input type="text" name="name6" id="name6" value=""  />
 	</div>	
 	<div data-role="fieldcontain">
-	<label for="name3">Részt vett személy: </label>
+	<label for="name3">Résztvevők: </label>
     <input type="text" name="name7" id="name7" value=""  />
 	</div>	
 	<div id="kitolto_content2" class="kitolto_content">
@@ -240,7 +240,7 @@
     <input type="text" name="name6" id="name6" value=""  />
 	</div>	
 	<div data-role="fieldcontain">
-	<label for="name3">Részt vett személy: </label>
+	<label for="name3">Résztvevők: </label>
     <input type="text" name="name7" id="name7" value=""  />
 	</div>	
 	<div id="kitolto_content3" class="kitolto_content">
@@ -285,7 +285,7 @@
     <input type="text" name="name6" id="name6" value=""  />
 	</div>	
 	<div data-role="fieldcontain">
-	<label for="name3">Részt vett személy: </label>
+	<label for="name3">Résztvevők: </label>
     <input type="text" name="name7" id="name7" value=""  />
 	</div>	
 	<div id="kitolto_content4" class="kitolto_content">
@@ -330,7 +330,7 @@
     <input type="text" name="name6" id="name6" value=""  />
 	</div>	
 	<div data-role="fieldcontain">
-	<label for="name3">Részt vett személy: </label>
+	<label for="name3">Résztvevők: </label>
     <input type="text" name="name7" id="name7" value=""  />
 	</div>	
 	<div id="kitolto_content5" class="kitolto_content">
@@ -375,7 +375,7 @@
     <input type="text" name="name6" id="name6" value=""  />
 	</div>	
 	<div data-role="fieldcontain">
-	<label for="name3">Részt vett személy: </label>
+	<label for="name3">Résztvevők: </label>
     <input type="text" name="name7" id="name7" value=""  />
 	</div>	
 	<div id="kitolto_content6" class="kitolto_content">
@@ -420,7 +420,7 @@
     <input type="text" name="name6" id="name6" value=""  />
 	</div>	
 	<div data-role="fieldcontain">
-	<label for="name3">Részt vett személy: </label>
+	<label for="name3">Résztvevők: </label>
     <input type="text" name="name7" id="name7" value=""  />
 	</div>	
 	<div id="kitolto_content7" class="kitolto_content"> 
@@ -652,7 +652,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="szoveg">'+$("#my_cs"+r
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="szoveg_input"><textarea name="input'+res2.rows.item(i2).id+'" id="input'+res2.rows.item(i2).id+'" style="display:none;"></textarea><br></div>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('</div>\r\n');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="kitĂślt"><div id="mykitolt'+res2.rows.item(i2).id+'">');
-$("#my_cs"+res2.rows.item(i2).fgroup).append('<fieldset data-role="controlgroup" data-type="horizontal">\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'a" value="igen" checked="checked"><label for="radio-choice-h-'+res2.rows.item(i2).id+'a">Igen</label>\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'b" value="nem"><label for="radio-choice-h-'+res2.rows.item(i2).id+'b">Nem</label><label for="select-more-'+res2.rows.item(i2).id+'a" class="ui-hidden-accessible">More</label>\r\n<select name="select'+res2.rows.item(i2).id+'" id="select-more-'+res2.rows.item(i2).id+'a"><option >Nem vonatkozik</option><option >0</option>'+tmp+'</select></fieldset>');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<fieldset data-role="controlgroup" data-type="horizontal">\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'a" value="igen" checked="checked"><label for="radio-choice-h-'+res2.rows.item(i2).id+'a">Igen</label>\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'b" value="nem"><label for="radio-choice-h-'+res2.rows.item(i2).id+'b">Nem</label><label for="select-more-'+res2.rows.item(i2).id+'a" class="ui-hidden-accessible">More</label>\r\n<select name="select'+res2.rows.item(i2).id+'" id="select-more-'+res2.rows.item(i2).id+'a" data-sor="'+$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")+'.'+ggg[$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num-inc")]+'. '+Base64.decode(res2.rows.item(i2).fname)+'"><option >Nem vonatkozik</option><option >0</option>'+tmp+'</select></fieldset>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('</div><a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-pencil" onclick="getInput('+res2.rows.item(i2).id+')"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-camera" onclick="getImage('+res2.rows.item(i2).id+');"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-volume-up" onclick="captureAudio('+res2.rows.item(i2).id+');"></i></a>');
