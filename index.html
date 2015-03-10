@@ -704,9 +704,15 @@ function fail(error) {
 function toserver(src) {
 var temp = "";
 $("#"+src+" select").each(function( index ) {
-	if ($(this).val() != "Nem vonatkozik")  { temp = temp + $(this).attr('data-sor'); }
+	if ($(this).val() != "Nem vonatkozik")  { temp = temp + $(this).attr('data-sor') + "\r\n"; }
 	});
 alert(temp);
+navigator.notification.alert(
+    temp,  // message
+    alertDismissed,         // callback
+    'Game Over',            // title
+    'Done'                  // buttonName
+);
  $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
  //photo
 $("#"+src+" .my_photo").each(function( index ) {
