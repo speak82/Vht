@@ -594,7 +594,7 @@ function onFailphoto(message) {
     var fileURI = mediaFiles[0].fullPath;
 		//$("#my_photo_"+editid).html(fileURI);
 		$("#my_audio_"+editid).html($("#my_audio_"+editid).html()+'<img class="upaudio" data-id="'+editid+'" data-src="'+fileURI+'" src="lib/img/play.png" width="120">');
-				$("#audio_"+editid).val($("#audio_"+editid).val()+imageUri+';');
+				$("#audio_"+editid).val($("#audio_"+editid).val()+fileURI+';');
     });
 	}
 
@@ -703,11 +703,33 @@ function fail(error) {
 
 function toserver(src) {
  $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
+ //photo
 $("#"+src+" .my_photo").each(function( index ) {
 	var id = $(this).attr('data-id');
 	$(this).find("img").each(function( index ) {
    // alert(id+'-'+$(this).attr('src'));
 			var imageURI = $(this).attr('src');
+	        var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+
+            var params = {};
+            params.value1 = "test";
+            params.value2 = "param";
+
+            options.params = params;
+
+            var ft = new FileTransfer();
+            ft.upload(imageURI, encodeURI("http://vht.bestit.hu/uploads.php"), win, fail, options);
+});
+});
+ //audio
+$("#"+src+" .my_audio").each(function( index ) {
+	var id = $(this).attr('data-id');
+	$(this).find("img").each(function( index ) {
+   // alert(id+'-'+$(this).attr('src'));
+			var imageURI = $(this).attr('data-src');
 	        var options = new FileUploadOptions();
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
