@@ -593,7 +593,7 @@ function onFailphoto(message) {
     var ft = new FileTransfer();
     var fileURI = mediaFiles[0].fullPath;
 		//$("#my_photo_"+editid).html(fileURI);
-		$("#my_audio_"+editid).html($("#my_audio_"+editid).html()+'<img class="upphoto" data-id="'+editid+'" data-src="'+imageUri+'" src="lib/img/play.png" width="120">');
+		$("#my_audio_"+editid).html($("#my_audio_"+editid).html()+'<img class="upaudio" data-id="'+editid+'" data-src="'+fileURI+'" src="lib/img/play.png" width="120">');
 				$("#audio_"+editid).val($("#audio_"+editid).val()+imageUri+';');
     });
 	}
@@ -657,7 +657,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div><a href="#" data-role="butto
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-camera" onclick="getImage('+res2.rows.item(i2).id+');"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-volume-up" onclick="captureAudio('+res2.rows.item(i2).id+');"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<br><br><div class="my_bub_1 my_hidden" id="my_bub_1_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_2 my_hidden" id="my_bub_2_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_3 my_hidden" id="my_bub_3_'+res2.rows.item(i2).id+'">0</div>');
-$("#my_cs"+res2.rows.item(i2).fgroup).append('<input type="hidden" name="photo'+res2.rows.item(i2).id+'" id="photo_'+res2.rows.item(i2).id+'"><div class="my_photo" id="my_photo_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div><input type="hidden" name="audio'+res2.rows.item(i2).id+'" id="audio_'+res2.rows.item(i2).id+'"><div class="my_photo" id="my_audio_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div></div>\r\n</div>\r\n');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<input type="hidden" name="photo'+res2.rows.item(i2).id+'" id="photo_'+res2.rows.item(i2).id+'"><div class="my_photo" id="my_photo_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div><input type="hidden" name="audio'+res2.rows.item(i2).id+'" id="audio_'+res2.rows.item(i2).id+'"><div class="my_audio" id="my_audio_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div></div>\r\n</div>\r\n');
 
  }
 
