@@ -704,6 +704,7 @@ function fail(error) {
 function toserver(src) {
 var temp = "";
 $("#"+src+" select").each(function( index ) {
+alert($(this).val());
 	if ($(this).val() != "Nem vonatkozik")  { temp = temp + $(this).attr("data-id") + "\r\n"; }
 	});
 alert(temp);
