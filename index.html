@@ -593,7 +593,7 @@ function onFailphoto(message) {
     var ft = new FileTransfer();
     var fileURI = mediaFiles[0].fullPath;
 		//$("#my_photo_"+editid).html(fileURI);
-		$("#my_audio_"+editid).html($("#my_audio_"+editid).html()+'<img class="upaudio" data-id="'+editid+'" data-src="'+fileURI+'" src="lib/img/play.png" width="120">');
+		$("#my_audio_"+editid).html($("#my_audio_"+editid).html()+'<img class="upaudio" data-id="'+editid+'" data-src="'+fileURI+'" src="lib/img/play.png" width="80">');
 				$("#audio_"+editid).val($("#audio_"+editid).val()+fileURI+';');
     });
 	}
