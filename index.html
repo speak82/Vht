@@ -703,7 +703,7 @@ function fail(error) {
 
 function toserver(src) {
 var temp = "";
-$("#"+src+" .my_photo").each(function( index ) {
+$("#"+src+" select").each(function( index ) {
 	if ($(this).val() != "Nem vonatkozik")  { temp = temp + $(this).attr('data-sor'); }
 	});
 alert(temp);
