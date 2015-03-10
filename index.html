@@ -701,14 +701,29 @@ function fail(error) {
     //console.log("upload error target " + error.target);
 }
 
+var global_src = "";
+
+ function toserveronConfirm(button) {
+        alert('You selected button ' + button);
+    }
+
 function toserver(src) {
+global_src = src;
 var temp = "";
 $("#"+src+" select").each(function( index ) {
 //alert($(this).attr("data-idid"));
 	if ($(this).val() == "Nem vonatkozik")  { temp = temp + $(this).attr("data-idid") + "\r\n\r\n"; }
 	});
-alert(temp);
+//alert(temp);
+ navigator.notification.confirm(
+            temp,  // message
+            toserveronConfirm,              // callback to invoke with index of button pressed
+            'Következő kérdésekre nem érkezet értékelés,            // title
+            'Mégsem,Tovább'          // buttonLabels
+        );
 
+function toserver_save() {
+	var src = global_src;
  $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
  //photo
 $("#"+src+" .my_photo").each(function( index ) {
