@@ -704,6 +704,8 @@ function fail(error) {
 function toserver(src) {
 var temp = "";
 $("#"+src+" .my_select").each(function( index ) {
+alert($(this).val());
+alert($("option:selected", this).val());
 	if ($(this).val() != "Nem vonatkozik")  { temp = temp + $(this).attr('data-sor') + "\r\n"; }
 	});
 alert(temp);
