@@ -718,9 +718,10 @@ $("#"+src+" select").each(function( index ) {
  navigator.notification.confirm(
             temp,  // message
             toserveronConfirm,              // callback to invoke with index of button pressed
-            'Következő kérdésekre nem érkezet értékelés,            // title
+            'Következő kérdésekre nem érkezet értékelés',            // title
             'Mégsem,Tovább'          // buttonLabels
         );
+}
 
 function toserver_save() {
 	var src = global_src;
