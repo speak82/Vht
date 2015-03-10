@@ -703,8 +703,8 @@ function fail(error) {
 
 function toserver(src) {
 var temp = "";
-$("#"+src+" .my_select").each(function( index ) {
-	if ($("option:selected", this).val() != "Nem vonatkozik")  { temp = temp + $(this).html() + "\r\n"; }
+$("#"+src+" select").each(function( index ) {
+	if ($(this).val() != "Nem vonatkozik")  { temp = temp + $(this).attr("data-id") + "\r\n"; }
 	});
 alert(temp);
 
