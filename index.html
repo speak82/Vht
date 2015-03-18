@@ -162,6 +162,9 @@
 	<br>
 	<button type="button" class="btn btn-default" onclick="toserver('form_1');">Befejezés</button>
 	</center>
+	<div data-role="popup" id="pop" data-theme="a">
+	1
+	</div>
 	</form>
 	</div>
 </div>
@@ -209,13 +212,9 @@
 	<br>
 	<button type="button" class="btn btn-default" onclick="toserver('form_2');">Befejezés</button>
 	</center>
-	<div data-role="popup" id="pop2" data-theme="none">
-    <img id="pic2" src="http://test.jqmobile.de/img/popup-test.png" />
-    <div class="ui-bar ui-bar-a">
-       <a href="#dia" data-rel="dialog">open the dialog</a>
-     </div>
-  </div>
-  <a href="#pop2" data-rel="popup" data-position-to="window">Let me see this Popup!</a>
+	<div data-role="popup" id="pop" data-theme="a">
+	2
+	</div>
 	</form>
 	</div>
 </div>
@@ -684,6 +683,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('<fieldset data-role="controlgroup"
 $("#my_cs"+res2.rows.item(i2).fgroup).append('</div><a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-pencil" onclick="getInput('+res2.rows.item(i2).id+')"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-camera" onclick="getImage('+res2.rows.item(i2).id+');"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-volume-up" onclick="captureAudio('+res2.rows.item(i2).id+');"></i></a>');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#pop" data-rel="popup" data-position-to="window"><i data-role="button" class="glyphicon glyphicon-leaf"></i></a>
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<br><br><div class="my_bub_1 my_hidden" id="my_bub_1_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_2 my_hidden" id="my_bub_2_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_3 my_hidden" id="my_bub_3_'+res2.rows.item(i2).id+'">0</div>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<input type="hidden" name="photo'+res2.rows.item(i2).id+'" id="photo_'+res2.rows.item(i2).id+'"><div class="my_photo" id="my_photo_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div><input type="hidden" name="audio'+res2.rows.item(i2).id+'" id="audio_'+res2.rows.item(i2).id+'"><div class="my_audio" id="my_audio_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div></div>\r\n</div>\r\n');
 
