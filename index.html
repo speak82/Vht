@@ -671,6 +671,15 @@ gggalap[5] = 0;
 gggalap[6] = 0;
 gggalap[7] = 0;
  var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
+ 
+ db2.transaction(function(tx) {        
+    tx.executeSql("select * from my_docx", [], function(tx, res3) {
+    for(var i = 0;i<=res3.rows.length;i++){
+	$("#pop"+res3.rows.item(i).id).html(Base64.decode(res.rows.item(i).fdata));
+   	}
+});    
+});
+ 
  db2.transaction(function(tx) {        
     tx.executeSql("select * from my_group where factive=0 order by fsort", [], function(tx, res) {
     for(var i = 0;i<=res.rows.length;i++){
