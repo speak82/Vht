@@ -675,7 +675,7 @@ gggalap[7] = 0;
  db2.transaction(function(tx) {        
     tx.executeSql("select * from my_docx", [], function(tx, res3) {
     for(var i = 0;i<=res3.rows.length;i++){
-	$("#pop"+res3.rows.item(i).id).html(Base64.decode(res.rows.item(i).fdata));
+	$("#pop"+res3.rows.item(i).id).html(Base64.decode(res3.rows.item(i).fdata));
    	}
 });    
 });
