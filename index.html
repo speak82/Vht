@@ -683,7 +683,7 @@ gggalap[7] = 0;
 db2.transaction(function(tx) {        
     tx.executeSql("select * from my_auditor", [], function(tx, res4) {
     for(var i = 0;i<=res4.rows.length;i++){
-	 my_auditor_temp = my_auditor_temp + "<option>"+Base64.decode(res4.rows.item(i).fname)+"</option>";
+	 my_auditor_temp = my_auditor_temp + '<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>';
    	}
 	$("#my_auditor1").html(my_auditor_temp);
 	$("#my_auditor2").html(my_auditor_temp);
