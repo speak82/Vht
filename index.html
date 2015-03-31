@@ -671,7 +671,13 @@ gggalap[5] = 0;
 gggalap[6] = 0;
 gggalap[7] = 0;
  var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
-$("#my_auditor2").append("<option>Kérem válaszon</option>");
+ $("#my_auditor1").html("<option>Kérem válaszon</option>");
+$("#my_auditor2").html("<option>Kérem válaszon</option>");
+$("#my_auditor3").html("<option>Kérem válaszon</option>");
+$("#my_auditor4").html("<option>Kérem válaszon</option>");
+$("#my_auditor5").html("<option>Kérem válaszon</option>");
+$("#my_auditor6").html("<option>Kérem válaszon</option>");
+$("#my_auditor7").html("<option>Kérem válaszon</option>");
  db2.transaction(function(tx) {        
     tx.executeSql("select * from my_docx", [], function(tx, res3) {
     for(var i = 0;i<=res3.rows.length;i++){
@@ -683,7 +689,13 @@ $("#my_auditor2").append("<option>Kérem válaszon</option>");
 db2.transaction(function(tx) {        
     tx.executeSql("select * from my_auditor", [], function(tx, res4) {
     for(var i = 0;i<=res4.rows.length;i++){
+	 $("#my_auditor1").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
 	 $("#my_auditor2").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
+	 $("#my_auditor3").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
+	 $("#my_auditor4").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
+	 $("#my_auditor5").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
+	 $("#my_auditor6").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
+	 $("#my_auditor7").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
    	}
 });    
 });
