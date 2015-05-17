@@ -726,7 +726,7 @@ db2.transaction(function(tx) {
 	 $("#my_auditor7").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
    	}
 	
-	if (window.localStorage.getItem("auditor") <> "") $("#my_auditorsetup").val(window.localStorage.getItem("auditor"));
+	if (window.localStorage.getItem("auditor") != "") $("#my_auditorsetup").val(window.localStorage.getItem("auditor"));
 });    
 });
  
