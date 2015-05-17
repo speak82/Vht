@@ -717,13 +717,13 @@ db2.transaction(function(tx) {
     tx.executeSql("select * from my_auditor", [], function(tx, res4) {
     for(var i = 0;i<=res4.rows.length;i++){
 	 $("#my_auditorsetup").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
-	 $("#my_auditor1").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
-	 $("#my_auditor2").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
-	 $("#my_auditor3").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
-	 $("#my_auditor4").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
-	 $("#my_auditor5").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
-	 $("#my_auditor6").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
-	 $("#my_auditor7").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
+	 $("#my_auditor1").append('<option value="'+Base64.decode(res4.rows.item(i).fname)+'">'+Base64.decode(res4.rows.item(i).fname)+'</option>');
+	 $("#my_auditor2").append('<option value="'+Base64.decode(res4.rows.item(i).fname)+'">'+Base64.decode(res4.rows.item(i).fname)+'</option>');
+	 $("#my_auditor3").append('<option value="'+Base64.decode(res4.rows.item(i).fname)+'">'+Base64.decode(res4.rows.item(i).fname)+'</option>');
+	 $("#my_auditor4").append('<option value="'+Base64.decode(res4.rows.item(i).fname)+'">'+Base64.decode(res4.rows.item(i).fname)+'</option>');
+	 $("#my_auditor5").append('<option value="'+Base64.decode(res4.rows.item(i).fname)+'">'+Base64.decode(res4.rows.item(i).fname)+'</option>');
+	 $("#my_auditor6").append('<option value="'+Base64.decode(res4.rows.item(i).fname)+'">'+Base64.decode(res4.rows.item(i).fname)+'</option>');
+	 $("#my_auditor7").append('<option value="'+Base64.decode(res4.rows.item(i).fname)+'">'+Base64.decode(res4.rows.item(i).fname)+'</option>');
    	}
 	
 	if (window.localStorage.getItem("auditor") != "") $("#my_auditorsetup").val(window.localStorage.getItem("auditor"));
