@@ -50,6 +50,9 @@
 						<li >
 							<a href="#main">Főoldal</a>
 						</li>
+						<li >
+							<a href="#setup">Beállítások</a>
+						</li>
 						
 						<!--li >
 							<a href="" onclick="my_load();">test</a>
@@ -82,6 +85,24 @@
 	</div>
 </div>
 
+
+<!-- setup -->
+<div data-role="page" id="setup">
+	<div data-role="header" class="myheader" data-fullscreen="false" style="background-image: url('img/header.png'); height:140px; background-color:#ffffff;">
+		<div class="mybutton myleft" id="myhome"><a href="#nav-panel" data-icon="bars"><i class="glyphicon glyphicon-tasks" style="font-size:70px"></i></a>	</div>
+		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
+	</div>
+	<div data-role="main" class="ui-content mycontent">
+		<div data-role="fieldcontain">
+	<label for="name1">Auditor neve:</label>
+    <select name="name4" id="my_auditor1" class="my_auditor">
+                        <option>Kérem válaszon</option>
+                        <option value="Dr. Mile Sándor">Dr. Mile Sándor</option><option value="Dr. Német Antal">Dr. Német Antal</option><option value="Dr. Schindler Gábor">Dr. Schindler Gábor</option><option value="Dr. Wekerle László">Dr. Wekerle László</option><option value="Dr. Zádori László">Dr. Zádori László</option><option value="György Árpád">György Árpád</option><option value="Keleti Emil">Keleti Emil</option><option value="Menczel Lászlóné">Menczel Lászlóné</option><option value="Mészáros Gergely">Mészáros Gergely</option><option value="Sztudényi Ágnes">Sztudényi Ágnes</option><option value="Török Gergely">Török Gergely</option>                        </select>
+	
+	</div>	
+	
+	</div>
+</div>
 
 <!-- kitolto1 -->
 <div data-role="page" id="kitolto1">
@@ -671,7 +692,7 @@ gggalap[5] = 0;
 gggalap[6] = 0;
 gggalap[7] = 0;
  var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
- $("#my_auditor1").html("<option>Kérem válaszon</option>");
+$("#my_auditor1").html("<option>Kérem válaszon</option>");
 $("#my_auditor2").html("<option>Kérem válaszon</option>");
 $("#my_auditor3").html("<option>Kérem válaszon</option>");
 $("#my_auditor4").html("<option>Kérem válaszon</option>");
