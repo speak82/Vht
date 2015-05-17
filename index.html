@@ -100,6 +100,8 @@
                         <option value="Dr. Mile Sándor">Dr. Mile Sándor</option><option value="Dr. Német Antal">Dr. Német Antal</option><option value="Dr. Schindler Gábor">Dr. Schindler Gábor</option><option value="Dr. Wekerle László">Dr. Wekerle László</option><option value="Dr. Zádori László">Dr. Zádori László</option><option value="György Árpád">György Árpád</option><option value="Keleti Emil">Keleti Emil</option><option value="Menczel Lászlóné">Menczel Lászlóné</option><option value="Mészáros Gergely">Mészáros Gergely</option><option value="Sztudényi Ágnes">Sztudényi Ágnes</option><option value="Török Gergely">Török Gergely</option>                        </select>
 	
 	</div>	
+	<br>
+	<button type="button" class="btn btn-default" onclick="setupsave();">Mentés</button>
 	
 	</div>
 </div>
@@ -580,9 +582,9 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 */				
 		});
 		
-		$("#my_auditorsetup").on( 'change', function( event ) {
+		function setupsave() {
 		 window.localStorage.setItem("auditor",$("#my_auditorsetup").val());
-		});
+		};
 		
 		
 		$( document ).delegate("#sync", "pageshow", function() {
