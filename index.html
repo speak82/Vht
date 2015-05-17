@@ -580,6 +580,11 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 */				
 		});
 		
+		$("my_auditorsetup").on( 'change', function( event ) {
+		 window.localStorage.setItem("auditor",$("#my_auditorsetup").val());
+		});
+		
+		
 		$( document ).delegate("#sync", "pageshow", function() {
 		
 		$.mobile.loading( 'show');
@@ -720,6 +725,8 @@ db2.transaction(function(tx) {
 	 $("#my_auditor6").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
 	 $("#my_auditor7").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
    	}
+	
+	if (window.localStorage.getItem("auditor") <> "") $("#my_auditorsetup").val(window.localStorage.getItem("auditor"));
 });    
 });
  
