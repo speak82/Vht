@@ -580,7 +580,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 */				
 		});
 		
-		$("my_auditorsetup").on( 'change', function( event ) {
+		$("#my_auditorsetup").on( 'change', function( event ) {
 		 window.localStorage.setItem("auditor",$("#my_auditorsetup").val());
 		});
 		
@@ -725,6 +725,7 @@ db2.transaction(function(tx) {
 	 $("#my_auditor6").append('<option value="'+Base64.decode(res4.rows.item(i).fname)+'">'+Base64.decode(res4.rows.item(i).fname)+'</option>');
 	 $("#my_auditor7").append('<option value="'+Base64.decode(res4.rows.item(i).fname)+'">'+Base64.decode(res4.rows.item(i).fname)+'</option>');
    	}
+	if (window.localStorage.getItem("auditor") != "") $("#my_auditorsetup").val(window.localStorage.getItem("auditor"));
 });    
 });
  
@@ -771,7 +772,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('<input type="hidden" name="photo'+
  
  function my_loadpage(id){
   setTimeout(function(){
-		if (window.localStorage.getItem("auditor") != "") $("#my_auditorsetup").val(window.localStorage.getItem("auditor"));
+		
         $.mobile.loading('show', {theme:"b", text:"Adatok betöltése...", textonly:true, textVisible: true});
     },1); 
 	setTimeout(function(){
