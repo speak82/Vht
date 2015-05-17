@@ -95,7 +95,7 @@
 	<div data-role="main" class="ui-content mycontent">
 		<div data-role="fieldcontain">
 	<label for="name1">Auditor neve:</label>
-    <select name="name4" id="my_auditor1" class="my_auditor">
+    <select name="name4" id="my_auditorsetup" class="my_auditor">
                         <option>Kérem válaszon</option>
                         <option value="Dr. Mile Sándor">Dr. Mile Sándor</option><option value="Dr. Német Antal">Dr. Német Antal</option><option value="Dr. Schindler Gábor">Dr. Schindler Gábor</option><option value="Dr. Wekerle László">Dr. Wekerle László</option><option value="Dr. Zádori László">Dr. Zádori László</option><option value="György Árpád">György Árpád</option><option value="Keleti Emil">Keleti Emil</option><option value="Menczel Lászlóné">Menczel Lászlóné</option><option value="Mészáros Gergely">Mészáros Gergely</option><option value="Sztudényi Ágnes">Sztudényi Ágnes</option><option value="Török Gergely">Török Gergely</option>                        </select>
 	
@@ -692,6 +692,7 @@ gggalap[5] = 0;
 gggalap[6] = 0;
 gggalap[7] = 0;
  var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
+$("#my_auditorsetup").html("<option>Kérem válaszon</option>");
 $("#my_auditor1").html("<option>Kérem válaszon</option>");
 $("#my_auditor2").html("<option>Kérem válaszon</option>");
 $("#my_auditor3").html("<option>Kérem válaszon</option>");
@@ -710,6 +711,7 @@ $("#my_auditor7").html("<option>Kérem válaszon</option>");
 db2.transaction(function(tx) {        
     tx.executeSql("select * from my_auditor", [], function(tx, res4) {
     for(var i = 0;i<=res4.rows.length;i++){
+	 $("#my_auditorsetup").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
 	 $("#my_auditor1").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
 	 $("#my_auditor2").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
 	 $("#my_auditor3").append('<option>'+Base64.decode(res4.rows.item(i).fname)+'</option>');
