@@ -964,7 +964,7 @@ db2.transaction(function(tx) {
 		 //alert(id+lll);
 		  if (lll.length >= 5) {
 		  alert(lll);
-			var imageURI = lll;
+			var imageURI = lll.replace(':///',':/');
 	        var options = new FileUploadOptions();
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
