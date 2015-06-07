@@ -993,7 +993,7 @@ db2.transaction(function(tx) {
 	 if (i == res.rows.length) {
 		var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
 		db2.transaction(function(tx) {  
-			//tx.executeSql('DROP TABLE IF EXISTS my_temp');
+			tx.executeSql('DROP TABLE IF EXISTS my_temp');
 		}); 
 	 $.mobile.loading('hide');
 	 alert("Feltöltés kész.");
