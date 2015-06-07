@@ -628,13 +628,11 @@ function getImage(id) {
 
 function getImage_gal(id) {
 		editid = id;
-      navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 100,
+      navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 50,
     destinationType: Camera.DestinationType.FILE_URI,
-	// sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM,
-	 sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY,
-	targetWidth: 2350,
-    targetHeight: 1800,
-	saveToPhotoAlbum : true
+	 sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM
+	// sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+
 });
  
         }		
