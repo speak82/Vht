@@ -952,13 +952,14 @@ db2.transaction(function(tx) {
   
   tx.executeSql("select data from my_temp;", [], function(tx, res) {
   for(var i = 0;i<=res.rows.length;i++){
-	 var obj = jQuery.parseJSON( Base64.decode(res4.rows.item(i).data));
+	 var obj = jQuery.parseJSON( Base64.decode(res.rows.item(i).data));
 	 $.post("http://vht.bestit.hu/post.php", obj,      function(data) {
     //alert(data);
+	$.mobile.loading('hide');
   });
 	 
    	}
-	$.mobile.loading('hide');
+
   }); 
 });
 } else {
