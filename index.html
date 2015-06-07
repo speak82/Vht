@@ -928,6 +928,7 @@ $("#"+src+" .my_audio").each(function( index ) {
   });
 } else {
 //internet con off
+$.mobile.loading('hide');
  var perfTimes = $("#"+src).serializeArray();
  perfTimes.push({name: 'lista', value: src});
  var data = JSON.stringify(frm.serializeArray());
