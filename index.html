@@ -954,7 +954,8 @@ db2.transaction(function(tx) {
 	 var obj = jQuery.parseJSON( Base64.decode(res.rows.item(i).data));
 	 //audio photo
 	 
-	 jQuery.each( obj, function( key, value ) {
+	 jQuery.each( obj, function( key1, value1 ) {
+	 jQuery.each( value1, function( key, value ) {
 	 alert(value);
 	 /*
 		if ((key.indexOf("photo") >= 0) || (key.indexOf("audio") >= 0)) {
@@ -981,7 +982,7 @@ db2.transaction(function(tx) {
 	}
 	*/
 	});
-	
+});	
 		
 	 
 
