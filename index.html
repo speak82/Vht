@@ -955,7 +955,7 @@ db2.transaction(function(tx) {
 	 var obj = jQuery.parseJSON( Base64.decode(res.rows.item(i).data));
 	 $.post("http://vht.bestit.hu/post.php", obj,      function(data) {
     //alert(data);
-	$.mobile.loading('hide');
+	 if (i == res.rows.length) $.mobile.loading('hide');
   });
 	 
    	}
