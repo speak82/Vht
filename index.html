@@ -946,18 +946,19 @@ tx.executeSql('INSERT INTO my_temp (data) values ("'+Base64.encode(data)+'");');
 
 function to_temp(){
 if (checkConnection()){
-$.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
+
 var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
 db2.transaction(function(tx) {       
   tx.executeSql("select data from my_temp;", [], function(tx, res) {
   for(var i = 0;i<=res.rows.length;i++){
+  $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
 	 var obj = jQuery.parseJSON( Base64.decode(res.rows.item(i).data));
 	 //audio photo
 	 
 	 jQuery.each( obj, function( key, value ) {
 	// alert(value.name);
 	 
-		if ((value.value.indexOf("photo") >= 0) || (value.value.indexOf("audio") >= 0)) {
+		if ((value.name.indexOf("photo") >= 0) || (value.name.indexOf("audio") >= 0)) {
 		var myArray = value.value.split(';');
 		 jQuery.each(myArray,function(lll){
 		 alert(lll);
