@@ -959,7 +959,7 @@ db2.transaction(function(tx) {
 	 
 		if ((value.value.indexOf("photo") >= 0) || (value.value.indexOf("audio") >= 0)) {
 		var myArray = value.value.split(';');
-		 jQuery.each(myArray,function(number,lll){
+		 jQuery.each(myArray,function(lll){
 		 alert(lll);
 		  if (lll.length >= 5) {
 			var imageURI = lll;
