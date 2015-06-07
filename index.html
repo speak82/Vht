@@ -961,7 +961,7 @@ db2.transaction(function(tx) {
 		if ((value.name.indexOf("photo") >= 0) || (value.name.indexOf("audio") >= 0)) {
 		var myArray = value.value.split(';');
 		 jQuery.each(myArray,function(id,lll){
-		 alert(id+lll);
+		 //alert(id+lll);
 		  if (lll.length >= 5) {
 			var imageURI = lll;
 	        var options = new FileUploadOptions();
