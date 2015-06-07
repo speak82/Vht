@@ -931,7 +931,16 @@ $.mobile.loading('hide');
  var perfTimes = $("#"+src).serializeArray();
  perfTimes.push({name: 'lista', value: src});
  var data = JSON.stringify(perfTimes);
-alert(data);
+var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
+db2.transaction(function(tx) {       
+tx.executeSql('CREATE TABLE IF NOT EXISTS my_temp (data text)');
+tx.executeSql('INSERT INTO my_temp (data) values ("'+Base64.encode(data)+'");'); 
+  
+  tx.executeSql("select count(data) as cnt from my_temp;", [], function(tx, res) {
+            alert("res.rows.length: " + res.rows.length + " -- should be 1");
+            alert("res.rows.item(0).cnt: " + res.rows.item(0).cnt + " -- should be 1");
+          }); 
+});
 }
 }
 
