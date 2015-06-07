@@ -615,7 +615,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 		
 		});
 		
-		function getImage(id) {
+function getImage(id) {
 		editid = id;
       navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 100,
     destinationType: Camera.DestinationType.FILE_URI,
@@ -624,7 +624,19 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 	saveToPhotoAlbum : true
 });
  
-        }
+}
+
+function getImage_gal(id) {
+		editid = id;
+      navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 100,
+    destinationType: Camera.DestinationType.DATA_URL,
+	targetWidth: 2350,
+    targetHeight: 1800,
+	saveToPhotoAlbum : true
+});
+ 
+        }		
+	
 		
 		function onSuccessphoto(imageUri) {
    
@@ -756,6 +768,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('<div class="kitĂślt"><div id="my
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<fieldset data-role="controlgroup" data-type="horizontal">\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'a" value="igen" checked="checked"><label for="radio-choice-h-'+res2.rows.item(i2).id+'a">Igen</label>\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'b" value="nem"><label for="radio-choice-h-'+res2.rows.item(i2).id+'b">Nem</label><label for="select-more-'+res2.rows.item(i2).id+'a" class="ui-hidden-accessible">More</label>\r\n<select class="my_select" name="select'+res2.rows.item(i2).id+'" id="select-more-'+res2.rows.item(i2).id+'a" data-idid="'+$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")+'.'+ggg[$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num-inc")]+'. '+Base64.decode(res2.rows.item(i2).fname)+'"><option >Nem vonatkozik</option><option >0</option>'+tmp+'</select></fieldset>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('</div><a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-pencil" onclick="getInput('+res2.rows.item(i2).id+')"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-camera" onclick="getImage('+res2.rows.item(i2).id+');"></i></a>');
+$("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-picture" onclick="getImage_gal('+res2.rows.item(i2).id+');"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-volume-up" onclick="captureAudio('+res2.rows.item(i2).id+');"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<a href="#pop'+$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-ggg")+'" data-role="button" data-inline="true" data-rel="popup" data-position-to="window"><i data-role="button" class="glyphicon glyphicon-leaf"></i></a>');
 $("#my_cs"+res2.rows.item(i2).fgroup).append('<br><br><div class="my_bub_1 my_hidden" id="my_bub_1_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_2 my_hidden" id="my_bub_2_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_3 my_hidden" id="my_bub_3_'+res2.rows.item(i2).id+'">0</div>');
