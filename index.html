@@ -954,12 +954,12 @@ db2.transaction(function(tx) {
 	 var obj = jQuery.parseJSON( Base64.decode(res.rows.item(i).data));
 	 //audio photo
 	 
-	 $.each( obj, function( key, value ) {
+	 jQuery.each( obj, function( key, value ) {
 	 alert(value);
 	 /*
 		if ((key.indexOf("photo") >= 0) || (key.indexOf("audio") >= 0)) {
 		var myArray = value.split(';');
-		 $.each(myArray,function(number,lll){
+		 jQuery.each(myArray,function(number,lll){
 		 alert(lll);
 		  if (lll.length >= 5) {
 			var imageURI = lll;
