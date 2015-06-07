@@ -949,19 +949,20 @@ if (checkConnection()){
 $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
 var db2 =  window.sqlitePlugin.openDatabase({name: "DB"});
 db2.transaction(function(tx) {       
-  
   tx.executeSql("select data from my_temp;", [], function(tx, res) {
   for(var i = 0;i<=res.rows.length;i++){
 	 var obj = jQuery.parseJSON( Base64.decode(res.rows.item(i).data));
 	 //audio photo
 	 
 	 $.each( obj, function( key, value ) {
+	 alert(value);
+	 /*
 		if ((key.indexOf("photo") >= 0) || (key.indexOf("audio") >= 0)) {
 		var myArray = value.split(';');
-		 $.each(myArray,function(number){
-		 alert(number);
-		  if (number.length >= 5) {
-			var imageURI = number;
+		 $.each(myArray,function(number,lll){
+		 alert(lll);
+		  if (lll.length >= 5) {
+			var imageURI = lll;
 	        var options = new FileUploadOptions();
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -978,7 +979,7 @@ db2.transaction(function(tx) {
 			}
 		 });
 	}
-	
+	*/
 	});
 	
 		
