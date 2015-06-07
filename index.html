@@ -963,7 +963,7 @@ db2.transaction(function(tx) {
 		 jQuery.each(myArray,function(id,lll){
 		 //alert(id+lll);
 		  if (lll.length >= 5) {
-		  alert(lll);
+		  alert(lll.replace(':///',':/'));
 			var imageURI = lll.replace(':///',':/');
 	        var options = new FileUploadOptions();
             options.fileKey="file";
