@@ -957,7 +957,7 @@ db2.transaction(function(tx) {
 	 
 	 $.each( obj, function( key, value ) {
 		if ((key.indexOf("photo") >= 0) || (key.indexOf("video") >= 0)) {
-		var myArray = myString.split(';');
+		var myArray = value.split(';');
 		 $.each(myArray,function(number){
 		  if (number.length > 5) {
 			var imageURI = number;
