@@ -947,26 +947,23 @@ tx.executeSql('INSERT INTO my_temp (data) values ("'+Base64.encode(data)+'");');
 }
 }
 
-function dir_success(entries) {
-     var i;
-    for (i=0; i<entries.length; i++) {
-        if (entries[i].name.indexOf(".jpg") != -1) {
-            alert(entries[i].fullPath);
-        }
-    }
-}
-
-function dir_fail(error) {
-    alert("Failed to list directory contents: " + error.code);
-}
 
 function to_image() {
  //$.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
  
  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
- var directoryReader = dirEntry.root.createReader();
-// Get a list of all the entries in the directory
- directoryReader.readEntries(dir_success,dir_fail);
+ var sdcard = fileSystem.root;
+    sdcard.getDirectory("../../../../../../../../../../storage/emulated/0/DCIM/Camera/",
+             {create:false, exclusive: false}, 
+             function(dcim){
+                 var directoryReader = dcim.createReader();
+                 directoryReader.readEntries(function(entries){ 
+                 // success get files and folders
+                 for(var i=0; i<entries.length; ++i){
+                     alert(entries[i].name);
+                 }
+       });
+	 });
  });
 }
 
