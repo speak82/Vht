@@ -949,6 +949,7 @@ tx.executeSql('INSERT INTO my_temp (data) values ("'+Base64.encode(data)+'");');
 
 
 function to_image() {
+alert('test1');
  //$.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
  
  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
@@ -958,6 +959,7 @@ function to_image() {
              function(dcim){
                  var directoryReader = dcim.createReader();
                  directoryReader.readEntries(function(entries){ 
+				 alert('test3');
                  // success get files and folders
                  for(var i=0; i<entries.length; ++i){
                      if (entries[i].name.indexOf(".jpg") != -1) {
@@ -966,7 +968,7 @@ function to_image() {
                  }
        });
 	 });
- }), function(evt){
+ }, function(evt){
 alert("Error preparing to download apk: " + evt.target.error.code);
 });
 }
