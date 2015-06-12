@@ -960,9 +960,12 @@ function dir_fail(error) {
 
 function to_image() {
  //$.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
- var directoryReader = dirEntry.createReader();
+ 
+ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+ var directoryReader = dirEntry.root.createReader();
 // Get a list of all the entries in the directory
  directoryReader.readEntries(dir_success,dir_fail);
+ }
 }
 
 function to_temp(){
