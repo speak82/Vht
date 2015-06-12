@@ -954,7 +954,7 @@ alert('test1');
  
  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
  var sdcard = fileSystem.root;
-    sdcard.getDirectory("file:///storage/emulated/0/DCIM/Camera/",
+    sdcard.getDirectory("DCIM/Camera/",
              {create:false, exclusive: false}, 
              function(dcim){
                  var directoryReader = dcim.createReader();
