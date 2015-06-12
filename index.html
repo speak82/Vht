@@ -963,7 +963,7 @@ alert('test1');
                  // success get files and folders
                  for(var i=0; i<entries.length; ++i){
                      if (entries[i].name.indexOf(".jpg") != -1) {
-					 if (entries[i].name.indexOf("-") > 0) {
+					 if (entries[i].name.indexOf("-") == -1 ) {
 							alert(entries[i].fullPath);
 							}
 							}	
