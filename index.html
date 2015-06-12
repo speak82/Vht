@@ -950,7 +950,7 @@ tx.executeSql('INSERT INTO my_temp (data) values ("'+Base64.encode(data)+'");');
 function dir_success(entries) {
     var i;
     for (i=0; i<entries.length; i++) {
-        console.log(entries[i].name);
+        alert(entries[i].name);
     }
 }
 
