@@ -967,9 +967,11 @@ alert('test1');
 								}	
                  }
        });
-	 });
+	 },function(evt){
+alert("dir: " + evt.target.error.code);
+});
  }, function(evt){
-alert("Error preparing to download apk: " + evt.target.error.code);
+alert("system: " + evt.target.error.code);
 });
 }
 
