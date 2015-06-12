@@ -948,9 +948,11 @@ tx.executeSql('INSERT INTO my_temp (data) values ("'+Base64.encode(data)+'");');
 }
 
 function dir_success(entries) {
-    var i;
+     var i;
     for (i=0; i<entries.length; i++) {
-        alert(entries[i].name);
+        if (entries[i].name.indexOf(".jpg") != -1) {
+            alert(entries[i].fullPath);
+        }
     }
 }
 
