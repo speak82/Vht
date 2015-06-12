@@ -511,8 +511,9 @@
 	<br>
 	<div id="sync_java">
 	</div>
-	szinkronizálás kész <br>
-	<button type="button" class="btn btn-default" onclick="to_temp();">Mentett anyagog feltöltése.</button>
+	szinkronizálás kész <br><br>
+	<button type="button" class="btn btn-default" onclick="to_temp();">Mentett anyagog feltöltése.</button><br><br>
+	<button type="button" class="btn btn-default" onclick="to_image();">Képek szinkronizálása.</button>
 	</center>
 	</div>
 </div>
@@ -944,6 +945,24 @@ tx.executeSql('INSERT INTO my_temp (data) values ("'+Base64.encode(data)+'");');
           }); 
 });
 }
+}
+
+function dir_success(entries) {
+    var i;
+    for (i=0; i<entries.length; i++) {
+        console.log(entries[i].name);
+    }
+}
+
+function dir_fail(error) {
+    alert("Failed to list directory contents: " + error.code);
+}
+
+function to_image() {
+ //$.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
+ var directoryReader = dirEntry.createReader();
+// Get a list of all the entries in the directory
+ directoryReader.readEntries(dir_success,dir_fail);
 }
 
 function to_temp(){
