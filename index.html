@@ -960,11 +960,15 @@ function to_image() {
                  directoryReader.readEntries(function(entries){ 
                  // success get files and folders
                  for(var i=0; i<entries.length; ++i){
-                     alert(entries[i].name);
+                     if (entries[i].name.indexOf(".jpg") != -1) {
+							alert(entries[i].fullPath);
+								}	
                  }
        });
 	 });
- });
+ }), function(evt){
+alert("Error preparing to download apk: " + evt.target.error.code);
+});
 }
 
 function to_temp(){
