@@ -949,8 +949,8 @@ tx.executeSql('INSERT INTO my_temp (data) values ("'+Base64.encode(data)+'");');
 
 
 function to_image() {
-alert('test1');
- //$.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
+//alert('test1');
+$.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
  
  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
  var sdcard = fileSystem.root;
@@ -959,12 +959,12 @@ alert('test1');
              function(dcim){
                  var directoryReader = dcim.createReader();
                  directoryReader.readEntries(function(entries){ 
-				 alert('test3');
+				 //alert('test3');
                  // success get files and folders
                  for(var i=0; i<entries.length; ++i){
                      if (entries[i].name.indexOf(".jpg") != -1) {
 					 if (entries[i].name.indexOf("_") == -1 ) {
-							alert(entries[i].fullPath);
+							//alert(entries[i].fullPath);
 							
 			var imageURI = "file:/storage/emulated/0" + entries[i].fullPath
 	        var options = new FileUploadOptions();
@@ -989,6 +989,8 @@ alert("dir: " + evt.target.error.code);
  }, function(evt){
 alert("system: " + evt.target.error.code);
 });
+ $.mobile.loading('hide');
+	 alert("Feltöltés kész.");
 }
 
 function to_temp(){
