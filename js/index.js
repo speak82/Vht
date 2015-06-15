@@ -38,7 +38,21 @@ var app = {
 		 pictureSource=navigator.camera.PictureSourceType;
          destinationType=navigator.camera.DestinationType;
 		 
-		 document.addEventListener("backbutton", my_onBackKeyDown, false);
+		document.addEventListener("backbutton", function(e)
+				{
+                	
+  					
+      				if( $("#home").length > 0)
+					{
+						//nem lép ki :P
+						e.preventDefault();
+						navigator.app.exitApp();
+					}
+					else
+					{
+						navigator.app.backHistory();
+					}
+				}, false);
 		 
 		 my_load();
 		
