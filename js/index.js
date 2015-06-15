@@ -38,6 +38,8 @@ var app = {
 		 pictureSource=navigator.camera.PictureSourceType;
          destinationType=navigator.camera.DestinationType;
 		 
+		 document.addEventListener("backbutton", my_onBackKeyDown, false);
+		 
 		 my_load();
 		
         app.receivedEvent('deviceready');
