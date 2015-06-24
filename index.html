@@ -980,8 +980,14 @@ $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:tru
             params.value2 = "param";
 
             options.params = params;
-							var ft = new FileTransfer();
+					$.get( "http://vht.bestit.hu/api.php?mode=filecheck&file="+options.fileName, function( data ) {
+					if (data == "no") {
+					var ft = new FileTransfer();
 							ft.upload(imageURI, encodeURI("http://vht.bestit.hu/uploads.php"), win, fail, options);
+					}
+					});
+							
+							
 							}
 							}	
                  }
