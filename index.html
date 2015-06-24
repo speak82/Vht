@@ -951,10 +951,10 @@ tx.executeSql('INSERT INTO my_temp (data) values ("'+Base64.encode(data)+'");');
 }
 
 
-function to_image() {
-//alert('test1');
-$.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
- 
+function to_image_get() {
+
+var temp = "";
+
  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
  var sdcard = fileSystem.root;
     sdcard.getDirectory("DCIM/Camera/",
@@ -980,6 +980,58 @@ $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:tru
             params.value2 = "param";
 
             options.params = params;
+					temp += options.fileName+';';
+							
+							
+							}
+							}	
+                 }
+       });
+	 },function(evt){
+alert("dir: " + evt.target.error.code);
+});
+ }, function(evt){
+alert("system: " + evt.target.error.code);
+});
+
+$.get( "http://vht.bestit.hu/api.php?mode=filecheck&file="+temp, function( data ) {
+					to_image(data);
+					});
+
+ $.mobile.loading('hide');
+	 alert("Feltöltés kész.");
+}
+
+function to_image(strdata) {
+//alert('test1');
+$.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
+ 
+ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+ var sdcard = fileSystem.root;
+    sdcard.getDirectory("DCIM/Camera/",
+             {create:false, exclusive: false}, 
+             function(dcim){
+                 var directoryReader = dcim.createReader();
+                 directoryReader.readEntries(function(entries){ 
+				 //alert('test3');
+                 // success get files and folders
+                 for(var i=0; i<=entries.length; i++){
+                     if (entries[i].name.indexOf(".jpg") != -1) {
+					 if (entries[i].name.indexOf("_") == -1 ) {
+					 if (strdata.indexOf(entries[i].name) != -1) {
+							//alert(entries[i].fullPath);
+							
+			var imageURI = "file:/storage/emulated/0" + entries[i].fullPath
+	        var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+
+            var params = {};
+            params.value1 = "test";
+            params.value2 = "param";
+
+            options.params = params;
 					$.get( "http://vht.bestit.hu/api.php?mode=filecheck&file="+options.fileName, function( data ) {
 					if (data.indexOf("no") != -1) {
 					var ft = new FileTransfer();
@@ -990,6 +1042,7 @@ $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:tru
 							
 							}
 							}	
+							}
                  }
        });
 	 },function(evt){
