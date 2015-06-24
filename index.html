@@ -1032,12 +1032,10 @@ $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:tru
             params.value2 = "param";
 
             options.params = params;
-					$.get( "http://vht.bestit.hu/api.php?mode=filecheck&file="+options.fileName, function( data ) {
-					if (data.indexOf("no") != -1) {
+					
 					var ft = new FileTransfer();
 							ft.upload(imageURI, encodeURI("http://vht.bestit.hu/uploads.php?file="+options.fileName), win, fail, options);
-					}
-					});
+					
 							
 							
 							}
