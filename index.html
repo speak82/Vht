@@ -981,7 +981,7 @@ $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:tru
 
             options.params = params;
 					$.get( "http://vht.bestit.hu/api.php?mode=filecheck&file="+options.fileName, function( data ) {
-					if (data.indexOf("ok") != -1) {
+					if (data.indexOf("no") != -1) {
 					var ft = new FileTransfer();
 							ft.upload(imageURI, encodeURI("http://vht.bestit.hu/uploads.php"), win, fail, options);
 					}
