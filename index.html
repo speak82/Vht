@@ -986,6 +986,9 @@ var temp = "";
 							}
 							}	
                  }
+				 $.get( "http://vht.bestit.hu/api.php?mode=filecheck&file="+temp, function( data ) {
+					to_image_up(data);
+					});
        });
 	 },function(evt){
 alert("dir: " + evt.target.error.code);
@@ -994,9 +997,7 @@ alert("dir: " + evt.target.error.code);
 alert("system: " + evt.target.error.code);
 });
 
-$.get( "http://vht.bestit.hu/api.php?mode=filecheck&file="+temp, function( data ) {
-					to_image_up(data);
-					});
+
 
  $.mobile.loading('hide');
 	 alert("Feltöltés kész.");
