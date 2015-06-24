@@ -967,6 +967,7 @@ var temp = "";
                  for(var i=0; i<entries.length; i++){
                      if (entries[i].name.indexOf(".jpg") != -1) {
 					 if (entries[i].name.indexOf("_") == -1 ) {
+					 if (entries[i].name.indexOf("~") == -1 ) {
 							//alert(entries[i].fullPath);
 							
 			var imageURI = "file:/storage/emulated/0" + entries[i].fullPath
@@ -985,6 +986,7 @@ var temp = "";
 							
 							}
 							}	
+							}
                  }
 				 $.get( "http://vht.bestit.hu/api.php?mode=filecheck&file="+temp, function( data ) {
 					to_image_up(data);
@@ -1019,6 +1021,7 @@ $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:tru
                  for(var i=0; i<=entries.length; i++){
                      if (entries[i].name.indexOf(".jpg") != -1) {
 					 if (entries[i].name.indexOf("_") == -1 ) {
+					 if (entries[i].name.indexOf("~") == -1 ) {
 					 if (strdata.indexOf(entries[i].name) != -1) {
 							//alert(entries[i].fullPath);
 							
@@ -1040,6 +1043,7 @@ $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:tru
 							
 							
 							}
+							}	
 							}	
 							}
                  }
