@@ -988,7 +988,9 @@ var temp = "";
 							}	
 							}
                  }
-				 $.get( "http://vht.bestit.hu/api.php?mode=filecheck&file="+temp, function( data ) {
+				 $.post( "http://vht.bestit.hu/api.php?mode=filecheck",{
+				 				 file : ""+temp+""
+				 }, function( data ) {
 					to_image_up(data);
 					});
        });
