@@ -951,7 +951,7 @@ tx.executeSql('INSERT INTO my_temp (data) values ("'+Base64.encode(data)+'");');
 }
 
 
-function to_image_get() {
+function to_image() {
 
 var temp = "";
 
@@ -995,14 +995,14 @@ alert("system: " + evt.target.error.code);
 });
 
 $.get( "http://vht.bestit.hu/api.php?mode=filecheck&file="+temp, function( data ) {
-					to_image(data);
+					to_image_up(data);
 					});
 
  $.mobile.loading('hide');
 	 alert("Feltöltés kész.");
 }
 
-function to_image(strdata) {
+function to_image_up(strdata) {
 //alert('test1');
 $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
  
