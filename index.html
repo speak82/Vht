@@ -1192,7 +1192,8 @@ var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 				 //alert(value.name + " - " + value.value);
 				 
 				 if (value.value != "") {
-				 $("#"+res.rows.item(i).fname [name=value.name]).val(value.value);
+				 $("#"+res.rows.item(i).fname+" [name="+value.name+"]").val(value.value);
+				
 				 }
 				 
 				 });
