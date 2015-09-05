@@ -1187,7 +1187,7 @@ var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 			 tx.executeSql("select fname,fdata from my_template;", [], function(tx, res) {
 			
 				var obj = jQuery.parseJSON( Base64.decode(res.rows.item(0).fdata));
-$("#"+res.rows.item(0).fname+" input[type='radio']").attr("checked", false);				
+			
 				 jQuery.each( obj, function( key, value ) {
 				 
 				 //alert(value.name + " - " + value.value);
@@ -1198,8 +1198,9 @@ $("#"+res.rows.item(0).fname+" input[type='radio']").attr("checked", false);
 				 
 				 if (value.name.indexOf("radio") >= 0) {
 				    //alert(value.checked);
+					$("#"+res.rows.item(0).fname+" input[name='"+value.name+"']").attr("checked", false);	
 					$("#"+res.rows.item(0).fname+" input[name='"+value.name+"'][value='"+value.value+"']").attr("checked", "checked");
-					
+					$("#"+res.rows.item(0).fname+" input[name='"+value.name+"']").checkboxradio("refresh");
 				 }
 				 
 				 if (value.name.indexOf("select") >= 0) { 
@@ -1208,7 +1209,7 @@ $("#"+res.rows.item(0).fname+" input[type='radio']").attr("checked", false);
 				 }
 				 
 				 });
-				$("#"+res.rows.item(0).fname+" input[type='radio']").checkboxradio( "refresh" );
+				
 				alert("Betöltés kész.");
 			}); 
 	 //audio photo
