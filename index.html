@@ -1205,7 +1205,7 @@ var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 				 }
 				 
 				 if (value.name.indexOf("select") >= 0) { 
-				 $("#"+res.rows.item(0).fname+" input[name='"+value.name+"']").val(value.value).selectmenu('refresh');  
+				 $("#"+res.rows.item(0).fname+" select[name='"+value.name+"']").val(value.value).selectmenu('refresh');  
 				 }
 				 
 				 });
