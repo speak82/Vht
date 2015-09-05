@@ -1185,8 +1185,8 @@ function template_load(strname,strdata) {
 var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 		db.transaction(function(tx) {  
 			 tx.executeSql("select fname,fdata from my_template;", [], function(tx, res) {
-			for(var i = 0;i<=res.rows.length;i++){
-				var obj = jQuery.parseJSON( Base64.decode(res.rows.item(i).fdata));
+			
+				var obj = jQuery.parseJSON( Base64.decode(res.rows.item(0).fdata));
 				 jQuery.each( obj, function( key, value ) {
 				 
 				 //alert(value.name + " - " + value.value);
@@ -1207,8 +1207,6 @@ var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 				 
 				 });
 				
-				
-				}
 				alert("Betöltés kész.");
 			}); 
 	 //audio photo
