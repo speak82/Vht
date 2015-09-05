@@ -184,10 +184,18 @@
 	</div>
 	<br>
 	<button type="button" class="btn btn-default" onclick="toserver('form_1');">Befejezés</button>
+	
 	</center>
 	<div data-role="popup" id="pop1" data-theme="a">
 	1
 	</div>
+	</form>
+	<form>
+	<div id="divsablon1">
+	<button type="button" class="btn btn-default" onclick="template_load('form_1');">Sablon betöltése</button>
+	</div>
+	Uj sablon<input type="text" name="sablon1" id="sablon1">
+	<button type="button" class="btn btn-default" onclick="template_save('form_1');">Sablon mentése</button>
 	</form>
 	</div>
 </div>
@@ -1159,6 +1167,37 @@ fileSystem.root.getFile('download/KMS.apk', {
 alert("Error preparing to download apk: " + evt.target.error.code);
 });
 }
+
+function template_save(strname) {
+var perfTimes = $("#"+strname).serializeArray();
+var fdata = JSON.stringify(perfTimes);
+
+		var db =  window.sqlitePlugin.openDatabase({name: "Template"});
+		db.transaction(function(tx) {  
+			 tx.executeSql('CREATE TABLE IF NOT EXISTS my_template (id integer primary key,fform text,fname text, fdata text)');
+			 tx.executeSql('INSERT INTO my_template (fform,fname,fdata) values ("'+strname+'","'+strname+'","'+Base64.encode(fdata)+'");'); 
+		}); 
+}
+
+function template_load(strname {
+
+var db =  window.sqlitePlugin.openDatabase({name: "Template"});
+		db.transaction(function(tx) {  
+			 tx.executeSql("select data from my_template;", [], function(tx, res) {
+			for(var i = 0;i<=res.rows.length;i++){
+				var obj = jQuery.parseJSON( Base64.decode(res.rows.item(i).fdata));
+				 jQuery.each( obj, function( key, value ) {
+				 
+				 alert(key+" - "+value);
+				 
+				 });
+				
+				
+				}
+	 //audio photo
+		}); 
+}
+
 		
 </script>
 </body>
