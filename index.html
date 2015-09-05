@@ -1184,12 +1184,16 @@ function template_load(strname,strdata) {
 
 var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 		db.transaction(function(tx) {  
-			 tx.executeSql("select fdata from my_template;", [], function(tx, res) {
+			 tx.executeSql("select fname,fdata from my_template;", [], function(tx, res) {
 			for(var i = 0;i<=res.rows.length;i++){
 				var obj = jQuery.parseJSON( Base64.decode(res.rows.item(i).fdata));
 				 jQuery.each( obj, function( key, value ) {
 				 
-				 alert(value.name + " - " + value.value);
+				 //alert(value.name + " - " + value.value);
+				 
+				 if (value.value != "") {
+				 $("#"+res.rows.item(i).fname [name=value.name]).val(value.value);
+				 }
 				 
 				 });
 				
