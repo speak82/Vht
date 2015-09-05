@@ -1177,6 +1177,7 @@ var fdata = JSON.stringify(perfTimes);
 		     tx.executeSql('DROP TABLE IF EXISTS my_template');
 			 tx.executeSql('CREATE TABLE IF NOT EXISTS my_template (id integer primary key,fform text,fname text, fdata text)');
 			 tx.executeSql('INSERT INTO my_template (fform,fname,fdata) values ("'+$("#"+strdata).val()+'","'+strname+'","'+Base64.encode(fdata)+'");'); 
+			 alert("Mentés kész.");
 		}); 
 }
 
@@ -1204,8 +1205,7 @@ var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 				 }
 				 
 				 if (value.name.indexOf("select") >= 0) { 
-				 $("#"+res.rows.item(0).fname+" input[name='"+value.name+"']").val(value.value);
-				 $("#"+res.rows.item(0).fname+" input[name='"+value.name+"']").selectmenu('refresh', true);  
+				 $("#"+res.rows.item(0).fname+" input[name='"+value.name+"']").val(value.value).selectmenu('refresh', true);  
 				 }
 				 
 				 });
