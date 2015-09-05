@@ -1192,7 +1192,7 @@ $("#"+res.rows.item(0).fname+" input[type='radio']").attr("checked", false);
 				 
 				 //alert(value.name + " - " + value.value);
 				 //alert(value.value+" - "+ value.name);
-				 if (value.value != "") {
+				 if ((value.value != "") && (value.name.indexOf("radio") == -1)) {
 				 $("#"+res.rows.item(0).fname+" [name="+value.name+"]").val(value.value);
 				 }
 				 
