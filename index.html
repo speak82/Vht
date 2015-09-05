@@ -1197,8 +1197,10 @@ var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 				 
 				 if (value.name.indexOf("radio") >= 0) {
 				    //alert(value.checked);
-					$("#"+res.rows.item(0).fname+" [name='"+value.name+"']").prop( "checked", false ).checkboxradio( "refresh" );
-					$("#"+res.rows.item(0).fname+" [name='"+value.name+"'][value='"+value.value+"']").prop( "checked", true ).checkboxradio( "refresh" );
+					$("#"+res.rows.item(0).fname+" [name='"+value.name+"']").attr("checked", false);
+					
+					$("#"+res.rows.item(0).fname+" [name='"+value.name+"'][value='"+value.value+"']").attr("checked", true);
+					$("#"+res.rows.item(0).fname+" [name='"+value.name+"']").checkboxradio( "refresh" );
 				 }
 				 
 				 if (value.name.indexOf("select") >= 0) { 
