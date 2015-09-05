@@ -192,10 +192,10 @@
 	</form>
 	<form>
 	<div id="divsablon1">
-	<button type="button" class="btn btn-default" onclick="template_load('form_1');">Sablon betöltése</button>
+	<button type="button" class="btn btn-default" onclick="template_load('form_1','sablon1');">Sablon betöltése</button>
 	</div>
 	Uj sablon<input type="text" name="sablon1" id="sablon1">
-	<button type="button" class="btn btn-default" onclick="template_save('form_1');">Sablon mentése</button>
+	<button type="button" class="btn btn-default" onclick="template_save('form_1','sablon1');">Sablon mentése</button>
 	</form>
 	</div>
 </div>
@@ -1168,18 +1168,18 @@ alert("Error preparing to download apk: " + evt.target.error.code);
 });
 }
 
-function template_save(strname) {
+function template_save(strname,strdata) {
 var perfTimes = $("#"+strname).serializeArray();
 var fdata = JSON.stringify(perfTimes);
 
 		var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 		db.transaction(function(tx) {  
 			 tx.executeSql('CREATE TABLE IF NOT EXISTS my_template (id integer primary key,fform text,fname text, fdata text)');
-			 tx.executeSql('INSERT INTO my_template (fform,fname,fdata) values ("'+strname+'","'+strname+'","'+Base64.encode(fdata)+'");'); 
+			 tx.executeSql('INSERT INTO my_template (fform,fname,fdata) values ("'+$("#"+strdata).val()+'","'+strname+'","'+Base64.encode(fdata)+'");'); 
 		}); 
 }
 
-function template_load(strname {
+function template_load(strname,strdata) {
 
 var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 		db.transaction(function(tx) {  
