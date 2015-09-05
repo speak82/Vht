@@ -1174,6 +1174,7 @@ var fdata = JSON.stringify(perfTimes);
 
 		var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 		db.transaction(function(tx) {  
+		     tx.executeSql('DROP TABLE IF EXISTS my_template');
 			 tx.executeSql('CREATE TABLE IF NOT EXISTS my_template (id integer primary key,fform text,fname text, fdata text)');
 			 tx.executeSql('INSERT INTO my_template (fform,fname,fdata) values ("'+$("#"+strdata).val()+'","'+strname+'","'+Base64.encode(fdata)+'");'); 
 		}); 
@@ -1188,7 +1189,7 @@ var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 				var obj = jQuery.parseJSON( Base64.decode(res.rows.item(i).fdata));
 				 jQuery.each( obj, function( key, value ) {
 				 
-				 alert(key+" - "+value);
+				 alert(value.name + " - " + value.value);
 				 
 				 });
 				
