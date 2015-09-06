@@ -62,7 +62,7 @@ padding-top: 50px !important;
 			margin-left: -16px;
 }
 
-.my-grig-a {   width:100%; } 
+.my-grig-a {   width:100%;     overflow: hidden; } 
 .my-grid-a .my-block-a { width: 70%; float: left; }
 .my-grid-a .my-block-b { width: 27%; float: right;} 
 
