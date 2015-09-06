@@ -820,7 +820,7 @@ var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 		db.transaction(function(tx) {  
 			 tx.executeSql("select fname,fdata from my_template;", [], function(tx, res) {
 			for(var i = 0;i<=res.rows.length;i++){
-			 $("#divsablon1").html('<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''res.rows.item(i).fid'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button>');
+			 $("#divsablon1").html('<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).fid+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button>');
 			 }
 			 
 			}); 
