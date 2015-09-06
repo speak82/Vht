@@ -190,12 +190,15 @@
 	1
 	</div>
 	</form>
+	<br>
+	<BR>
+	<h1>Sablon:</h1>
 	<form>
 	<div id="divsablon1">
-	<button type="button" class="btn btn-default" onclick="template_load('form_1','sablon1');">Sablon betöltése</button>
+	
 	</div>
-	Uj sablon<input type="text" name="sablon1" id="sablon1">
-	<button type="button" class="btn btn-default" onclick="template_save('form_1','sablon1');">Sablon mentése</button>
+	<br>Új sablon neve:<input type="text" name="sablon1" id="sablon1">
+	<button type="button" class="btn btn-default" onclick="template_save('form_1','sablon1');">Sablonlonként mentés</button>
 	</form>
 	</div>
 </div>
@@ -773,7 +776,7 @@ db2.transaction(function(tx) {
 });    
 });
  
- db2.transaction(function(tx) {        
+    db2.transaction(function(tx) {        
     tx.executeSql("select * from my_group where factive=0 order by fsort", [], function(tx, res) {
     for(var i = 0;i<=res.rows.length;i++){
 	gggalap[res.rows.item(i).fgroup]++;
@@ -813,8 +816,20 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append(big_tmp);
 });
 });	
 
+var db =  window.sqlitePlugin.openDatabase({name: "Template"});
+		db.transaction(function(tx) {  
+			 tx.executeSql("select fname,fdata from my_template;", [], function(tx, res) {
+			for(var i = 0;i<=res.rows.length;i++){
+			 $("#divsablon1").html('<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''res.rows.item(i).fid'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button>');
+			 }
+			 
+			}); 
+	 //audio photo
+		}); 
 
 
+
+ 
  }
  
  function my_loadpage(id){
