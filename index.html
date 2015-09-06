@@ -878,7 +878,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append(big_tmp);
 
 var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 		db.transaction(function(tx) {  
-			 tx.executeSql("select fname,fform from my_template;", [], function(tx, res) {
+			 tx.executeSql("select fid,fname,fform from my_template;", [], function(tx, res) {
 			for(var i = 0;i<=res.rows.length;i++){
 				if (res.rows.item(i).fname	== "form_1") {
 					$("#divsablon1").html($("#divsablon1").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).fid+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
