@@ -878,28 +878,28 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append(big_tmp);
 
 var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 		db.transaction(function(tx) {  
-			 tx.executeSql("select fid,fname,fform from my_template;", [], function(tx, res) {
+			 tx.executeSql("select id,fname,fform from my_template;", [], function(tx, res) {
 			for(var i = 0;i<=res.rows.length;i++){
 				if (res.rows.item(i).fname	== "form_1") {
-					$("#divsablon1").html($("#divsablon1").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).fid+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
+					$("#divsablon1").html($("#divsablon1").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
 				}
 				if (res.rows.item(i).fname	== "form_2") {
-					$("#divsablon2").html($("#divsablon2").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).fid+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
+					$("#divsablon2").html($("#divsablon2").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
 				}
 				if (res.rows.item(i).fname	== "form_3") {
-					$("#divsablon3").html($("#divsablon3").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).fid+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
+					$("#divsablon3").html($("#divsablon3").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
 				}
 				if (res.rows.item(i).fname	== "form_4") {
-					$("#divsablon4").html($("#divsablon4").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).fid+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
+					$("#divsablon4").html($("#divsablon4").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
 				}
 				if (res.rows.item(i).fname	== "form_5") {
-					$("#divsablon5").html($("#divsablon5").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).fid+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
+					$("#divsablon5").html($("#divsablon5").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
 				}
 				if (res.rows.item(i).fname	== "form_6") {
-					$("#divsablon6").html($("#divsablon6").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).fid+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
+					$("#divsablon6").html($("#divsablon6").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
 				}
 				if (res.rows.item(i).fname	== "form_7") {
-					$("#divsablon7").html($("#divsablon7").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).fid+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
+					$("#divsablon7").html($("#divsablon7").html() + '<button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button><br>');
 				}
 			}
 			 
@@ -1280,7 +1280,7 @@ function template_load(strname,strdata) {
 
 var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 		db.transaction(function(tx) {  
-			 tx.executeSql("select fname,fdata from my_template where fid = "+strdata+";", [], function(tx, res) {
+			 tx.executeSql("select fname,fdata from my_template where id = "+strdata+";", [], function(tx, res) {
 			
 				var obj = jQuery.parseJSON( Base64.decode(res.rows.item(0).fdata));
 			
