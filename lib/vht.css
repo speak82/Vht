@@ -62,8 +62,9 @@ padding-top: 50px !important;
 			margin-left: -16px;
 }
 
-.my-grid-a .my-block-a { width: 80% }
-.my-grid-a .my-block-b { width: 20%; } 
+.my-grig-a {   width:100%; } 
+.my-grid-a .my-block-a { width: 70%; float: left; }
+.my-grid-a .my-block-b { width: 27%; float: right;} 
 
 .ui-li-has-thumb a {
 background-color:rgba(247,143,30,0.3) !important;
