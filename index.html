@@ -877,7 +877,25 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append(big_tmp);
 });
 });	
 
-var db =  window.sqlitePlugin.openDatabase({name: "Template"});
+
+
+template_default();
+
+
+ 
+ }
+ 
+ function template_default() {
+ 
+ $("#divsablon1").html("");
+  $("#divsablon2").html("");
+   $("#divsablon3").html("");
+    $("#divsablon4").html("");
+	 $("#divsablon5").html("");
+	  $("#divsablon6").html("");
+	   $("#divsablon7").html("");
+ 
+ var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 		db.transaction(function(tx) {  
 			 tx.executeSql("select id,fname,fform from my_template;", [], function(tx, res) {
 			for(var i = 0;i<=res.rows.length;i++){
@@ -907,10 +925,6 @@ var db =  window.sqlitePlugin.openDatabase({name: "Template"});
 			}); 
 	 //audio photo
 		}); 
-
-
-
-
  
  }
  
