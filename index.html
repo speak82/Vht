@@ -921,6 +921,15 @@ template_default();
 					$("#divsablon7").html($("#divsablon7").html() + '<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>');
 				}
 			}
+			
+$("#divsablon1").trigger('create');
+  $("#divsablon2").trigger('create');
+   $("#divsablon3").trigger('create');
+    $("#divsablon4").trigger('create');
+	 $("#divsablon5").trigger('create');
+	  $("#divsablon6").trigger('create');
+	   $("#divsablon7").trigger('create');
+			
 			 
 			}); 
 	 //audio photo
