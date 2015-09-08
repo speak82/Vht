@@ -900,36 +900,29 @@ template_default();
 			 tx.executeSql("select id,fname,fform from my_template;", [], function(tx, res) {
 			for(var i = 0;i<=res.rows.length;i++){
 				if (res.rows.item(i).fname	== "form_1") {
-					$("#divsablon1").html($("#divsablon1").html() + '<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>');
+					$("#divsablon1").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
 				if (res.rows.item(i).fname	== "form_2") {
-					$("#divsablon2").html($("#divsablon2").html() + '<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>');
+					$("#divsablon2").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
 				if (res.rows.item(i).fname	== "form_3") {
-					$("#divsablon3").html($("#divsablon3").html() + '<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>');
+					$("#divsablon3").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
 				if (res.rows.item(i).fname	== "form_4") {
-					$("#divsablon4").html($("#divsablon4").html() + '<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>');
+					$("#divsablon4").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
 				if (res.rows.item(i).fname	== "form_5") {
-					$("#divsablon5").html($("#divsablon5").html() + '<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>');
+					$("#divsablon5").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
 				if (res.rows.item(i).fname	== "form_6") {
-					$("#divsablon6").html($("#divsablon6").html() + '<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>');
+					$("#divsablon6").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
 				if (res.rows.item(i).fname	== "form_7") {
-					$("#divsablon7").html($("#divsablon7").html() + '<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>');
+					$("#divsablon7").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
 			}
 			
-$("#divsablon1").trigger('create');
-  $("#divsablon2").trigger('create');
-   $("#divsablon3").trigger('create');
-    $("#divsablon4").trigger('create');
-	 $("#divsablon5").trigger('create');
-	  $("#divsablon6").trigger('create');
-	   $("#divsablon7").trigger('create');
-			
+
 			 
 			}); 
 	 //audio photo
