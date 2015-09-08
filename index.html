@@ -787,7 +787,7 @@ function my_onBackKeyDown() {
 	
 function my_load() {
 //alert("load");
-
+ $("body").append('<div class="modalWindow"/>');
 var tmp = "";
 var ggg = [];
 var gggalap = [];
@@ -881,7 +881,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append(big_tmp);
 
 template_default();
 
-
+$(".modalWindow").remove();
  
  }
  
