@@ -53,8 +53,13 @@ var app = {
 						navigator.app.backHistory();
 					}
 				}, false);
+		
+     $("body").append('<div class="modalWindow"/>');
+    
+	setTimeout(function(){
+        my_load();
+    },15); 
 		 
-		 my_load();
 		
         app.receivedEvent('deviceready');
     },

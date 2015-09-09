@@ -787,8 +787,8 @@ function my_onBackKeyDown() {
 	
 function my_load() {
 //alert("load");
- $("body").append('<div class="modalWindow"/>');
-var tmp = "";
+
+ var tmp = "";
 var ggg = [];
 var gggalap = [];
 $("#kitolto_content1").html("");
@@ -882,6 +882,8 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append(big_tmp);
 template_default();
 
 $(".modalWindow").remove();
+
+
  
  }
  
@@ -946,7 +948,7 @@ $(".modalWindow").remove();
     },1); 
 	setTimeout(function(){
         $.mobile.changePage(id);
-    },10); 
+    },15); 
  
  }
  
