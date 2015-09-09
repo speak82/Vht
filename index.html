@@ -788,6 +788,10 @@ function my_onBackKeyDown() {
 function my_load() {
 //alert("load");
  $("body").append('<div class="modalWindow"/>');
+ setTimeout(function(){
+        $(".modalWindow").remove();
+    },6000); 
+ 
  var tmp = "";
 var ggg = [];
 var gggalap = [];
@@ -873,7 +877,7 @@ big_tmp +='<input type="hidden" name="photo'+res2.rows.item(i2).id+'" id="photo_
 $("#my_cs"+res2.rows.item(i2).fgroup).append(big_tmp);
  }
 
-$(".modalWindow").remove();
+
 });
 });	
 
