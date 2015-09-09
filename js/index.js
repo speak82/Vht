@@ -54,11 +54,9 @@ var app = {
 					}
 				}, false);
 		
-     $("body").append('<div class="modalWindow"/>');
     
-	setTimeout(function(){
         my_load();
-    },15); 
+    
 		 
 		
         app.receivedEvent('deviceready');
