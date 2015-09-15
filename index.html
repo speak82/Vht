@@ -939,7 +939,7 @@ big_tmp += '<a href="#" data-role="button" data-inline="true"><i data-role="butt
 big_tmp += '<a href="#pop'+$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-ggg")+'" data-role="button" data-inline="true" data-rel="popup" data-position-to="window"><i data-role="button" class="glyphicon glyphicon-leaf"></i></a>';
 big_tmp += '<br><br><div class="my_bub_1 my_hidden" id="my_bub_1_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_2 my_hidden" id="my_bub_2_'+res2.rows.item(i2).id+'">0</div><div class="my_bub_3 my_hidden" id="my_bub_3_'+res2.rows.item(i2).id+'">0</div>';
 big_tmp +='<input type="hidden" name="photo'+res2.rows.item(i2).id+'" id="photo_'+res2.rows.item(i2).id+'"><div class="my_photo" id="my_photo_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div><input type="hidden" name="audio'+res2.rows.item(i2).id+'" id="audio_'+res2.rows.item(i2).id+'"><div class="my_audio" id="my_audio_'+res2.rows.item(i2).id+'" data-id="'+res2.rows.item(i2).id+'"></div></div>\r\n</div>\r\n';
-$("#my_cs"+res2.rows.item(i2).fgroup).append(big_tmp).trigger('create');;
+$("#my_cs"+res2.rows.item(i2).fgroup).append(big_tmp);
  }
 
  
