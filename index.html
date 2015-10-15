@@ -1221,7 +1221,7 @@ function to_image_up_fullpath(strdata) {
 $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
  
  $.each(strdata.split(';'), function(imageURI) {
-							
+			alert(imageURI);				
 			//var imageURI = "file:/storage/emulated/0" + entries[i].fullPath
 	        var options = new FileUploadOptions();
             options.fileKey="file";
