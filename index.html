@@ -1154,7 +1154,7 @@ function to_image2() {
 
 var temp = "";
 
- $.get( "http://vht.bestit.hu/api.php?mode=filecheckall&auth"+window.localStorage.getItem("auditor"), function( data ) {
+ $.get( "http://vht.bestit.hu/api.php?mode=filecheckall&auth="+window.localStorage.getItem("auditor"), function( data ) {
 					to_image_up_fullpath(data);
 					});
 
