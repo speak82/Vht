@@ -1219,9 +1219,9 @@ alert("system: " + evt.target.error.code);
 function to_image_up_fullpath(strdata) {
 //alert('test1');
 $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
- alert(strdata);
+ //alert(strdata);
  $.each(strdata.split(';'), function(index,imageURI) {
-			alert(imageURI);				
+			//alert(imageURI);				
 			//var imageURI = "file:/storage/emulated/0" + entries[i].fullPath
 	        var options = new FileUploadOptions();
             options.fileKey="file";
