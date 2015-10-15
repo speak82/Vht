@@ -647,6 +647,7 @@
 	szinkronizálás kész <br><br>
 	<button type="button" class="btn btn-default" onclick="to_temp();">Mentett anyagog feltöltése.</button><br><br>
 	<button type="button" class="btn btn-default" onclick="to_image();">Képek szinkronizálása.</button>
+	<button type="button" class="btn btn-default" onclick="to_image2();">Mindenkép újból feltöltése (Lassú)</button>
 	</center>
 	</div>
 </div>
@@ -1149,6 +1150,15 @@ tx.executeSql('INSERT INTO my_temp (data) values ("'+Base64.encode(data)+'");');
 }
 }
 
+function to_image2() {
+
+var temp = "";
+
+ $.get( "http://vht.bestit.hu/api.php?mode=filecheckall&auth"+window.localStorage.getItem("auditor"), function( data ) {
+					to_image_up_fullpath(data);
+					});
+
+}
 
 function to_image() {
 
@@ -1207,6 +1217,33 @@ alert("system: " + evt.target.error.code);
 }
 
 function to_image_up(strdata) {
+//alert('test1');
+$.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
+ 
+ $.each(strdata.split(';'), function(imageURI) {
+							
+			//var imageURI = "file:/storage/emulated/0" + entries[i].fullPath
+	        var options = new FileUploadOptions();
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+
+            var params = {};
+            params.value1 = "test";
+            params.value2 = "param";
+
+            options.params = params;
+					
+	var ft = new FileTransfer();
+	ft.upload(imageURI, encodeURI("http://vht.bestit.hu/uploads.php?file="+options.fileName), win, fail, options);
+
+});	    
+
+ $.mobile.loading('hide');
+	 alert("Feltöltés kész.");
+}
+
+function to_image_up_fullpath(strdata) {
 //alert('test1');
 $.mobile.loading('show', {theme:"b", text:"Adatok feltöltése...", textonly:true, textVisible: true});
  
