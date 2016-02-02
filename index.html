@@ -775,7 +775,7 @@ function getImage_gal(id) {
 		
 		function onSuccessphoto(imageUri) {
    
-				$("#my_photo_"+editid).html($("#my_photo_"+editid).html()+'<img class="upphoto" data-id="'+editid+'" src="'+imageUri+'" width="180">');
+				$("#my_photo_"+editid).html($("#my_photo_"+editid).html()+'<img class="upphoto" data-id="'+editid+'" src="'+imageUri.replace("%","%25")+'" width="180">');
 				$("#photo_"+editid).val($("#photo_"+editid).val()+imageUri+';');
 
 }
@@ -1215,6 +1215,9 @@ alert("system: " + evt.target.error.code);
  $.mobile.loading('hide');
 	 alert("Feltöltés kész.");
 }
+
+
+
 
 function to_image_up_fullpath(strdata) {
 //alert('test1');
