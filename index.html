@@ -934,7 +934,7 @@ big_tmp += '</div>\r\n';
 big_tmp += '<div class="kitĂślt"><div id="mykitolt'+res2.rows.item(i2).id+'">';
 
 //big_tmp += '<fieldset data-role="controlgroup" data-type="horizontal">\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'a" value="igen" checked="checked"><label for="radio-choice-h-'+res2.rows.item(i2).id+'a">Igen</label>\r\n<input type="radio" name="radio'+res2.rows.item(i2).id+'" id="radio-choice-h-'+res2.rows.item(i2).id+'b" value="nem"><label for="radio-choice-h-'+res2.rows.item(i2).id+'b">Nem</label><label for="select-more-'+res2.rows.item(i2).id+'a" class="ui-hidden-accessible">More</label>\r\n<select class="my_select" name="select'+res2.rows.item(i2).id+'" id="select-more-'+res2.rows.item(i2).id+'a" data-idid="'+$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")+'.'+ggg[$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num-inc")]+'. '+Base64.decode(res2.rows.item(i2).fname)+'"><option >Nem vonatkozik</option><option >0</option>'+tmp+'</select></fieldset>';
-if (tmp <> ""){
+if (tmp != ""){
 big_tmp += '<fieldset data-role="controlgroup" data-type="horizontal">\r\n<select class="my_select" name="select'+res2.rows.item(i2).id+'" id="select-more-'+res2.rows.item(i2).id+'a" data-idid="'+$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num")+'.'+ggg[$("#my_cs"+res2.rows.item(i2).fgroup).attr("data-num-inc")]+'. '+Base64.decode(res2.rows.item(i2).fname)+'"><option >Nem vonatkozik</option><option >0</option>'+tmp+'</select></fieldset>';
 }
 big_tmp += '</div><a href="#" data-role="button" data-inline="true"><i data-role="button" class="glyphicon glyphicon-pencil" onclick="getInput('+res2.rows.item(i2).id+')"></i></a>';
