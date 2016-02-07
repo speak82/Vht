@@ -1376,7 +1376,7 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
 fileSystem.root.getFile('download/KMS.apk', {
     create: true
   }, function(fileEntry) {
-    var localPath = "/storage/emulated/0/Download/KMS.apk";
+    var localPath = fileEntry.fullPath; //"/storage/emulated/0/Download/KMS.apk";
     fileTransfer = new FileTransfer();   
 //alert(fileEntry.fullPath);	
     fileTransfer.download(uri, localPath, function(entry) {
