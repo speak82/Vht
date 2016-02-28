@@ -1013,18 +1013,21 @@ template_default();
  
  function my_loadpage(id){
   setTimeout(function(){
-		if (window.localStorage.getItem("auditor") != "") { 
-		$("#my_auditorsetup").val(window.localStorage.getItem("auditor"));
-		$("#my_auditor1").val(window.localStorage.getItem("auditor"));
-		$("#my_auditor2").val(window.localStorage.getItem("auditor"));
-		$("#my_auditor3").val(window.localStorage.getItem("auditor"));
-		$("#my_auditor4").val(window.localStorage.getItem("auditor"));
-		$("#my_auditor5").val(window.localStorage.getItem("auditor"));
-		$("#my_auditor6").val(window.localStorage.getItem("auditor"));
-		$("#my_auditor7").val(window.localStorage.getItem("auditor"));
-		$("#my_auditor8").val(window.localStorage.getItem("auditor"));
+   $.mobile.loading('show', {theme:"b", text:"Adatok betöltése...", textonly:true, textVisible: true});
+		var auditor = "";
+		auditor = window.localStorage.getItem("auditor");
+		if (auditor != "") { 
+		$("#my_auditorsetup").val(auditor);
+		$("#my_auditor1").val(auditor);
+		$("#my_auditor2").val(auditor);
+		$("#my_auditor3").val(auditor);
+		$("#my_auditor4").val(auditor);
+		$("#my_auditor5").val(auditor);
+		$("#my_auditor6").val(auditor);
+		$("#my_auditor7").val(auditor);
+		$("#my_auditor8").val(auditor);
 		}
-        $.mobile.loading('show', {theme:"b", text:"Adatok betöltése...", textonly:true, textVisible: true});
+       
     },1); 
 	setTimeout(function(){
         $.mobile.changePage(id);
