@@ -113,7 +113,7 @@
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
 	<div data-role="main" class="ui-content mycontent">
-	<form name="form_1" id="form_1">
+	<form name="form_11" id="form_11">
 	<div data-role="fieldcontain">
     <label for="name">Pályázati Sorszám:</label>
     <input type="text" name="name1" id="name1" value=""  />
@@ -183,7 +183,7 @@
 	
 	</div>
 	<br>
-	<button type="button" class="btn btn-default" onclick="toserver('form_1');">Befejezés</button>
+	<button type="button" class="btn btn-default" onclick="toserver('form_11');">Befejezés</button>
 	
 	</center>
 	<div data-role="popup" id="pop1" data-theme="a">
@@ -198,7 +198,7 @@
 	
 	</div>
 	<br>Új sablon neve:<input type="text" name="sablon1" id="sablon1">
-	<button type="button" class="btn btn-default" onclick="template_save('form_1','sablon1');">Sablonként mentés</button>
+	<button type="button" class="btn btn-default" onclick="template_save('form_11','sablon11');">Sablonként mentés</button>
 	</div>
 	</form>
 	</div>
@@ -271,7 +271,7 @@
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
 	<div data-role="main" class="ui-content mycontent">
-	<form name="form_3" id="form_3">
+	<form name="form_13" id="form_13">
 	<div data-role="fieldcontain">
    <label for="name">Pályázati Sorszám:</label>
     <input type="text" name="name1" id="name1" value=""  />
@@ -306,7 +306,7 @@
 	<div id="kitolto_content3" class="kitolto_content">
 	</div>
 	<br>
-	<button type="button" class="btn btn-default" onclick="toserver('form_3');">Befejezés</button>
+	<button type="button" class="btn btn-default" onclick="toserver('form_13');">Befejezés</button>
 	</center>
 	<div data-role="popup" id="pop3" data-theme="a">
 	3
@@ -320,7 +320,7 @@
 	
 	</div>
 	<br>Új sablon neve:<input type="text" name="sablon3" id="sablon3">
-	<button type="button" class="btn btn-default" onclick="template_save('form_3','sablon3');">Sablonként mentés</button>
+	<button type="button" class="btn btn-default" onclick="template_save('form_13','sablon13');">Sablonként mentés</button>
 	</form>
 	</div>
 </div>
@@ -454,7 +454,7 @@
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
 	<div data-role="main" class="ui-content mycontent">
-	<form name="form_6" id="form_6">
+	<form name="form_16" id="form_16">
 	<div data-role="fieldcontain">
    <label for="name">Pályázati Sorszám:</label>
     <input type="text" name="name1" id="name1" value=""  />
@@ -489,7 +489,7 @@
 	<div id="kitolto_content6" class="kitolto_content">
 	</div>
 	<br>
-	<button type="button" class="btn btn-default" onclick="toserver('form_6');">Befejezés</button>
+	<button type="button" class="btn btn-default" onclick="toserver('form_16');">Befejezés</button>
 	</center>
 	<div data-role="popup" id="pop6" data-theme="a">
 	6
@@ -503,7 +503,7 @@
 	
 	</div>
 	<br>Új sablon neve:<input type="text" name="sablon6" id="sablon6">
-	<button type="button" class="btn btn-default" onclick="template_save('form_6','sablon6');">Sablonként mentés</button>
+	<button type="button" class="btn btn-default" onclick="template_save('form_16','sablon16');">Sablonként mentés</button>
 	</form>
 	</div>
 </div>
@@ -515,7 +515,7 @@
 		<div class="mybutton myleft" id="myhome"><a a href="#" data-icon="bars" data-rel="back"><i class="glyphicon glyphicon-arrow-left" style="font-size:70px"></i></a></div>
 	</div>
 	<div data-role="main" class="ui-content mycontent">
-	<form name="form_7" id="form_7">
+	<form name="form_17" id="form_17">
 	<div data-role="fieldcontain">
    <label for="name">Pályázati Sorszám:</label>
     <input type="text" name="name1" id="name1" value=""  />
@@ -564,7 +564,7 @@
 	
 	</div>
 	<br>Új sablon neve:<input type="text" name="sablon7" id="sablon7">
-	<button type="button" class="btn btn-default" onclick="template_save('form_7','sablon7');">Sablonként mentés</button>
+	<button type="button" class="btn btn-default" onclick="template_save('form_17','sablon17');">Sablonként mentés</button>
 	</form>
 	</div>
 </div>
@@ -977,13 +977,13 @@ template_default();
 		db.transaction(function(tx) {  
 			 tx.executeSql("select id,fname,fform from my_template;", [], function(tx, res) {
 			for(var i = 0;i<=res.rows.length;i++){
-				if (res.rows.item(i).fname	== "form_1") {
+				if (res.rows.item(i).fname	== "form_11") {
 					$("#divsablon1").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
 				if (res.rows.item(i).fname	== "form_2") {
 					$("#divsablon2").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
-				if (res.rows.item(i).fname	== "form_3") {
+				if (res.rows.item(i).fname	== "form_13") {
 					$("#divsablon3").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
 				if (res.rows.item(i).fname	== "form_4") {
@@ -992,10 +992,10 @@ template_default();
 				if (res.rows.item(i).fname	== "form_5") {
 					$("#divsablon5").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
-				if (res.rows.item(i).fname	== "form_6") {
+				if (res.rows.item(i).fname	== "form_16") {
 					$("#divsablon6").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
-				if (res.rows.item(i).fname	== "form_7") {
+				if (res.rows.item(i).fname	== "form_17") {
 					$("#divsablon7").append('<div class="my-grid-a" id="sablonid'+res.rows.item(i).id+'"><div class="my-block-a"><button type="button" class="btn btn-default" onclick="template_load(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');"> '+res.rows.item(i).fform+' - Sablon betöltése</button></div><div class="my-block-b"><div class="my-block-a"><button type="button" class="btn btn-danger" onclick="template_delete(\''+res.rows.item(i).fname+'\',\''+res.rows.item(i).id+'\');">Sablon törlése</button></div></div><br>').trigger('create');
 				}
 				if (res.rows.item(i).fname	== "form_8") {
