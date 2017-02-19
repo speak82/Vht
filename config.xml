@@ -43,7 +43,6 @@
     <gap:plugin name="cordova-plugin-network-information" source="npm" />
     <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
     <gap:plugin name="cordova-plugin-vibration" source="npm" />
-	<gap:plugin name="com.boyvanderlaak.cordova.plugin.orientationchanger" />
 	<gap:plugin name="cordova-plugin-sqlite" source="npm" />
 	<gap:plugin name="com.borismus.webintent.WebIntent" source="npm" version="1.0.1" />
     <icon src="icon.png" />
