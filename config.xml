@@ -44,7 +44,7 @@
     <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
     <gap:plugin name="cordova-plugin-vibration" source="npm" />
 	<gap:plugin name="cordova-plugin-sqlite" source="npm" />
-	<gap:plugin name="com.borismus.webintent.WebIntent" source="npm" version="1.0.1" />
+	<gap:plugin name="com.borismus.webintent.WebIntent" />
     <icon src="icon.png" />
     <gap:splash src="res/betolto_kep.png" />
     <access origin="*" />
