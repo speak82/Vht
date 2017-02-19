@@ -752,24 +752,21 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 		
 function getImage(id) {
 		editid = id;
-      navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 100,
-    destinationType: Camera.DestinationType.FILE_URI,
-	
-	
-     encodingType: Camera.EncodingType.JPG,
-        
-          correctOrientation: 1,
-          saveToPhotoAlbum:true
+      	navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 100,
+    	destinationType: Camera.DestinationType.FILE_URI,
+		encodingType: Camera.EncodingType.JPG,
+        correctOrientation: 1,
+
 });
  
 }
 
 function getImage_gal(id) {
 		editid = id;
-      navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI,
-	 sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM
-	// sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+     	navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 50,
+    	destinationType: Camera.DestinationType.FILE_URI,
+	 	sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM
+		//sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 
 });
  
