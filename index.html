@@ -753,10 +753,7 @@ $("#my_cs"+res2.rows.item(i2).fgroup).append('</div></div>');
 function getImage(id) {
 		editid = id;
       navigator.camera.getPicture(onSuccessphoto, onFailphoto, { quality: 100,
-    destinationType: Camera.DestinationType.FILE_URI,
-	targetWidth: 2350,
-    targetHeight: 1800,
-	saveToPhotoAlbum : true
+    destinationType: Camera.DestinationType.FILE_URI
 });
  
 }
